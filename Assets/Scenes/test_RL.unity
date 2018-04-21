@@ -176,9 +176,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   minGroundNormalY: 0.65
-  gravityModifier: 0.95
+  gravityModifier: 0.92
   maxSpeed: 7
-  jumpTakeOffSpeed: 17
+  jumpTakeOffSpeed: 13
 --- !u!1 &119729456
 GameObject:
   m_ObjectHideFlags: 0
