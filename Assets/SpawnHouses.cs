@@ -5,8 +5,8 @@ public class SpawnHouses : MonoBehaviour
 {
     public GameObject HousePrefab;
 
-    public float xOffset;
-    public float yOffest;
+    public float xOffset;  //0.5
+    public float yOffest;  //0.2
 
     void Start()
     {
@@ -31,7 +31,7 @@ public class SpawnHouses : MonoBehaviour
                         //print("here is house tile");
                         GameObject house = Instantiate(HousePrefab, null);
                         house.name = "muj dum";
-                        Vector3 housePos = gridLayout.CellToWorld(new Vector3Int(x - 13, y - 19, 0));
+                        Vector3 housePos = gridLayout.CellToWorld(new Vector3Int(x - 15, y - 19, 0));
                         housePos = new Vector3(housePos.x + xOffset, housePos.y + yOffest, 0);
                         house.transform.position = housePos;
                     }
