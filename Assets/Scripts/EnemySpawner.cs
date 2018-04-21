@@ -17,7 +17,6 @@ public class EnemySpawner : MonoBehaviour {
 
     void Spawn()
     {
-        print("hoj sulin");
         // FIXME: if player is dead, do not spawn
         if (spawnPoints.Length > 0) {
             int spawnPointIndex = Random.Range(0, spawnPoints.Length);
