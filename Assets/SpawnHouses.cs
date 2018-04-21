@@ -5,6 +5,9 @@ public class SpawnHouses : MonoBehaviour
 {
     public GameObject HousePrefab;
 
+    public float xOffset;
+    public float yOffest;
+
     void Start()
     {
         GridLayout gridLayout = transform.parent.GetComponentInParent<GridLayout>();
@@ -25,10 +28,11 @@ public class SpawnHouses : MonoBehaviour
                     if (tile.name == tch.HouseSpotTileName)
                     {
                         Debug.Log("x:" + x + " y:" + y + " tile:" + tile.name);
-                        print("here is house tile");
+                        //print("here is house tile");
                         GameObject house = Instantiate(HousePrefab, null);
                         house.name = "muj dum";
                         Vector3 housePos = gridLayout.CellToWorld(new Vector3Int(x - 13, y - 19, 0));
+                        housePos = new Vector3(housePos.x + xOffset, housePos.y + yOffest, 0);
                         house.transform.position = housePos;
                     }
                 }
