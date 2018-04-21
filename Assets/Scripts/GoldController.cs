@@ -14,6 +14,11 @@ public class GoldController : MonoBehaviour {
 		gold = 0;
 		updateGold();
 	}
+
+    public bool RequestPurchase()
+    {
+        return true;//always enough gold :)
+    }
 	
 	void goldAdd(int amount) {
 		gold += amount;
