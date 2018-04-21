@@ -277,6 +277,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthBar: {fileID: 1733761228}
+  endCanvas: {fileID: 0}
 --- !u!114 &70170599
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -822,6 +823,48 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 642339975}
   m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+--- !u!1001 &860588055
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4858157478799046, guid: 9d013fc7a073144459bf42b3940baf21, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4858157478799046, guid: 9d013fc7a073144459bf42b3940baf21, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4858157478799046, guid: 9d013fc7a073144459bf42b3940baf21, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4858157478799046, guid: 9d013fc7a073144459bf42b3940baf21, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4858157478799046, guid: 9d013fc7a073144459bf42b3940baf21, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4858157478799046, guid: 9d013fc7a073144459bf42b3940baf21, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4858157478799046, guid: 9d013fc7a073144459bf42b3940baf21, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4858157478799046, guid: 9d013fc7a073144459bf42b3940baf21, type: 2}
+      propertyPath: m_RootOrder
+      value: 11
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 9d013fc7a073144459bf42b3940baf21, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &902695595
 GameObject:
   m_ObjectHideFlags: 0
@@ -3484,7 +3527,7 @@ MonoBehaviour:
     type: 2}
   HouseSystem: {fileID: 2116258107}
   xOffset: 0.5
-  yOffest: 0.2
+  yOffest: -1
 --- !u!1 &1459600421
 GameObject:
   m_ObjectHideFlags: 0
