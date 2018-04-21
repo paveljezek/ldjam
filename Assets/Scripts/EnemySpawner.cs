@@ -20,7 +20,12 @@ public class EnemySpawner : MonoBehaviour {
         // FIXME: if player is dead, do not spawn
         if (spawnPoints.Length > 0) {
             int spawnPointIndex = Random.Range(0, spawnPoints.Length);
-            Instantiate(enemyType, spawnPoints[spawnPointIndex].position, spawnPoints[spawnPointIndex].rotation);
+            GameObject enemy = Instantiate(
+                enemyType,
+                spawnPoints[spawnPointIndex].position,
+                spawnPoints[spawnPointIndex].rotation
+            );
+            enemy.transform.parent = transform;
         }
     }
 }
