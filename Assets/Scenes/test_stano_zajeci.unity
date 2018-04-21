@@ -450,7 +450,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1777144987
-  m_SortingLayer: 1
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 181ca16ce9888524abe9a8a0a1b014d1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -533,7 +533,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 545262924}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 47c90a3b673331a4ab190bf04abf4684, type: 3}
   m_Name: 
@@ -1058,6 +1058,7 @@ GameObject:
   - component: {fileID: 1258002568}
   - component: {fileID: 1258002570}
   - component: {fileID: 1258002571}
+  - component: {fileID: 1258002572}
   m_Layer: 0
   m_Name: PlatformsTilemap
   m_TagString: Untagged
@@ -1109,8 +1110,8 @@ TilemapRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -597564969
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_MaxChunkCount: 16
@@ -2569,6 +2570,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HouseSpotTileName: ground_map_19
+--- !u!114 &1258002572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1258002566}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d92dc8b3cb922f4c9594932c04b2a21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HousePrefab: {fileID: 1479589585716586, guid: 9d013fc7a073144459bf42b3940baf21,
+    type: 2}
+  HouseSystem: {fileID: 2116258107}
+  xOffset: 0.5
+  yOffest: 0.2
 --- !u!1 &1459600421
 GameObject:
   m_ObjectHideFlags: 0
@@ -2978,3 +2995,9 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1c0c8992478f3e24792a3c58a13284bc, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &2116258107 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114396018859722892, guid: 1c0c8992478f3e24792a3c58a13284bc,
+    type: 2}
+  m_PrefabInternal: {fileID: 2116258106}
+  m_Script: {fileID: 11500000, guid: c611970df73e3d54d97a7c07b07c70a5, type: 3}

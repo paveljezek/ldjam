@@ -33,7 +33,7 @@ public class SpawnHouses : MonoBehaviour
                         GameObject house = Instantiate(HousePrefab, null);
                         //house.name = "muj dum";
                         house.transform.parent = transform;
-                        Vector3 housePos = gridLayout.CellToWorld(new Vector3Int(x - 15, y - 19, 0));
+                        Vector3 housePos = gridLayout.CellToWorld(new Vector3Int(x - 15, y - 7, 0));
                         housePos = new Vector3(housePos.x + xOffset, housePos.y + yOffest, 0);
                         house.transform.position = housePos;
 
