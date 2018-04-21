@@ -24,7 +24,6 @@ public class HouseSystem : MonoBehaviour {
 
     private void OnHouseSpotDisabled(object sender, EventArgs e)
     {
-        print("HouseSystem: OnHouseSpotEnabled");
         ui.SetRender(false);
     }
 
