@@ -12,7 +12,7 @@ public class GoldController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		gold = 0;
-		goldAdd(10);
+		updateGold();
 	}
 	
 	void goldAdd(int amount) {
