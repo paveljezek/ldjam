@@ -14,15 +14,15 @@ public class ScoreController : MonoBehaviour {
 		updateScore();
 	}
 
-	void enemyKill() {
+	public void enemyKill() {
 		addScore(2);
 	}
 
-	void waveComplete() {
+	public void waveComplete() {
 		addScore(25);
 	}
 
-	void buildingBuilt() {
+	public void buildingBuilt() {
 		addScore(50);
 	}
 	

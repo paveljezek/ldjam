@@ -11,8 +11,13 @@ public class House : MonoBehaviour {
 
     public void BuildHouse()
     {
+        if(!isHouseBuild) {
+            GameObject panel = GameObject.Find("TopPanel");
+            panel.GetComponent<ScoreController>().buildingBuilt();
+        }
         isHouseBuild = true;
         sr.enabled = true;
+        
     }
 
     public void DestroyHouse()
