@@ -38,11 +38,9 @@ public class EnemyMovementController : PhysicsObject
         }
         else if (other.name == "Player")
         {
-            // TODO: make the player bounce a bit
-            return;
-            // Rigidbody2D prb = other.GetComponent<Rigidbody2D>();
-            // Vector2 moveAside = Vector2.zero;
-            // moveAside.x += targetVelocity.x * 20;
+            Rigidbody2D prb = other.GetComponent<Rigidbody2D>();
+            Vector2 moveAside = new Vector2(direction * 3, 2);
+            prb.AddForceAtPosition(moveAside, prb.transform.position, ForceMode2D.Impulse);
         }
         else
         {
