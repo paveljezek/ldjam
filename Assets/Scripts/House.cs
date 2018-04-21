@@ -28,7 +28,7 @@ public class House : MonoBehaviour {
 	void Start () {
         hs = GameObject.Find("HouseSystem").GetComponent<HouseSystem>();
         sr = GetComponentInChildren<SpriteRenderer>();
-        DestroyHouse();
+        //DestroyHouse();
     }
 	
 	// Update is called once per frame
