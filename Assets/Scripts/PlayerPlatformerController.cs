@@ -6,8 +6,6 @@ public class PlayerPlatformerController : PhysicsObject
 {
     public float maxSpeed = 7;
     public float jumpTakeOffSpeed = 7;
-    private float lastHitTime = 0f;
-    public HealthController hpControl;
 
     private SpriteRenderer spriteRenderer;
     //private Animator animator;
@@ -19,23 +17,7 @@ public class PlayerPlatformerController : PhysicsObject
         //animator = GetComponent<Animator>();
     }
 
-    private void OnTriggerStay2D(Collider2D other)
-    {
-        if (((lastHitTime + 0.5f) < Time.time) && other.name.StartsWith("Enemy"))
-        {
-            lastHitTime = Time.time;
-            hpControl.healthSub(10);
-        }
-    }
 
-    private void OnTriggerEntry2D(Collider2D other)
-    {
-        if (other.name.StartsWith("Enemy"))
-        {
-            lastHitTime = Time.time;
-            hpControl.healthSub(10);
-        }
-    }
 
 
     protected override void ComputeVelocity()

@@ -48,7 +48,7 @@ namespace SimpleHealthBar_SpaceshipExample
 			}
 		}
 
-		void OnTriggerEnter ( Collider theCollider )
+		void OnTriggerEnter2D ( Collider2D theCollider )
 		{
 			// If the collision was from the player...
 			if( theCollider.gameObject.name == "Player" && canPickup == true )

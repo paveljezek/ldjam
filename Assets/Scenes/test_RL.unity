@@ -203,7 +203,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 70170593}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.0040545, y: -3.0652356, z: 0.061035156}
+  m_LocalPosition: {x: 0.11, y: -3.0652356, z: 0.061035156}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 119729459}
@@ -245,7 +245,6 @@ MonoBehaviour:
   gravityModifier: 0.95
   maxSpeed: 7
   jumpTakeOffSpeed: 17
-  hpControl: {fileID: 70170598}
 --- !u!114 &70170597
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -259,12 +258,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponText: {fileID: 1845447522}
   weaponImage: {fileID: 842112863}
-  weapons:
-  - staff
-  - sword
-  - pistol
-  - shotgun
-  - bfg
+  bulletSpeed: 0
+  bullets:
+  - {fileID: 1361537683264044, guid: 30a83513596e8d040b9b25d06abbc528, type: 2}
 --- !u!114 &70170598
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -278,6 +274,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthBar: {fileID: 1733761228}
   endCanvas: {fileID: 0}
+  maxHealth: 100
 --- !u!114 &70170599
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -302,7 +299,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -1.2611903, y: 0.1489855}
+  m_Offset: {x: -1.2611903, y: 0.22}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -387,6 +384,7 @@ GameObject:
   - component: {fileID: 119729459}
   - component: {fileID: 119729458}
   - component: {fileID: 119729457}
+  - component: {fileID: 119729460}
   m_Layer: 0
   m_Name: pope_sketch
   m_TagString: Player
@@ -406,11 +404,11 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.15}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1.6}
+    oldSize: {x: 1.25, y: 2}
     newSize: {x: 1, y: 1.6}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -476,6 +474,17 @@ Transform:
   m_Father: {fileID: 70170594}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &119729460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 119729456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82971f03f6b2d18408a3e0aebb84d245, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &311496142
 GameObject:
   m_ObjectHideFlags: 0
@@ -534,7 +543,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 545262924}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 47c90a3b673331a4ab190bf04abf4684, type: 3}
   m_Name: 
