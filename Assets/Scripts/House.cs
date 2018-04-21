@@ -6,6 +6,7 @@ using UnityEngine;
 public class House : MonoBehaviour {
 
     public HouseSystem hs;
+    public int HealthPoints;
 
     bool isHouseBuild;
 
@@ -29,6 +30,7 @@ public class House : MonoBehaviour {
         hs = GameObject.Find("HouseSystem").GetComponent<HouseSystem>();
         sr = GetComponentInChildren<SpriteRenderer>();
         DestroyHouse();
+        BuildHouse();
     }
 	
 	// Update is called once per frame
@@ -41,6 +43,13 @@ public class House : MonoBehaviour {
         if (other.tag == "Player")
         {
             hs.HouseSpotEnabled(this);
+        }
+
+        if (isHouseBuild && other.name.StartsWith("Enemy"))
+        {
+            HealthPoints -= 5;
+            if (HealthPoints <= 0)
+                DestroyHouse();
         }
     }
 
