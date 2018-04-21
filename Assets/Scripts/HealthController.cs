@@ -4,18 +4,16 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class HealthController : MonoBehaviour {
-
-	public SimpleHealthBar healthBar;
-
+	public SimpleHealthBar healthBar = null;
 	public Canvas endCanvas;
-	
-	// Use this for initialization
-	float health;
-	const float maxHealth = 100;
 
-	void Start () {
-		health = maxHealth;
-		updateHealth();
+    // Use this for initialization
+    public float maxHealth = 100;
+    private float health;
+
+    void Start () {
+        health = maxHealth;
+        updateHealth();
 	}
 	
 	public void healthAdd(float amount) {
@@ -25,13 +23,21 @@ public class HealthController : MonoBehaviour {
 
 	public void healthSub(float amount) {
 		health -= amount;
-		if(health <= 0) {
+        // healthBar == null if this is not a player
+		if(health <= 0 && healthBar != null) {
 			endCanvas.GetComponent<EndStateController>().triggerEndState();
 		}
 		updateHealth();
+        if (health <= 0)
+        {
+            Destroy(gameObject);
+        }
 	}
 
-	void updateHealth() {
-		healthBar.UpdateBar(health, maxHealth);
-	}
+    void updateHealth() {
+        if (healthBar != null) {
+		    healthBar.UpdateBar(health, maxHealth);
+        }
+    }
+    
 }

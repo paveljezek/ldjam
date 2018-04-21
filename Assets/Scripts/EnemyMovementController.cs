@@ -6,9 +6,10 @@ using UnityEngine;
 public class EnemyMovementController : PhysicsObject
 {
     public float speed = 5f;
-    private List<int> directions = new List<int> {-1, 1};
     public int direction = -1;
+
     private SpriteRenderer spriteRenderer;
+    private List<int> directions = new List<int> { -1, 1 };
 
     void Start()
     {

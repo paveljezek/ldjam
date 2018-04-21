@@ -259,12 +259,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponText: {fileID: 1845447522}
   weaponImage: {fileID: 842112863}
-  weapons:
-  - staff
-  - sword
-  - pistol
-  - shotgun
-  - bfg
+  bullets:
+  - {fileID: 1361537683264044, guid: 30a83513596e8d040b9b25d06abbc528, type: 2}
 --- !u!114 &70170598
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -277,6 +273,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthBar: {fileID: 1733761228}
+  maxHealth: 100
 --- !u!114 &70170599
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -533,7 +530,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 545262924}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 47c90a3b673331a4ab190bf04abf4684, type: 3}
   m_Name: 
@@ -566,7 +563,7 @@ Prefab:
     - target: {fileID: 224123184116636238, guid: 960a7531075c5754c8a640a3f94ef1ff,
         type: 2}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 224123184116636238, guid: 960a7531075c5754c8a640a3f94ef1ff,
         type: 2}
@@ -606,7 +603,7 @@ Prefab:
     - target: {fileID: 224123184116636238, guid: 960a7531075c5754c8a640a3f94ef1ff,
         type: 2}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 224123184116636238, guid: 960a7531075c5754c8a640a3f94ef1ff,
         type: 2}
@@ -2897,7 +2894,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1967642308
 GameObject:
