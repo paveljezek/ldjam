@@ -37,7 +37,10 @@ public class SpawnHouses : MonoBehaviour
                         housePos = new Vector3(housePos.x + xOffset, housePos.y + yOffest, 0);
                         house.transform.position = housePos;
 
-                        house.GetComponent<House>().hs = HouseSystem;
+                        House houseComp = house.GetComponent<House>();
+                        houseComp.hs = HouseSystem;
+                        houseComp.HealthPoints = 30;//see Holy GDD by Pavel
+
                     }
                 }
             }
