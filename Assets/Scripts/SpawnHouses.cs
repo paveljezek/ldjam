@@ -4,6 +4,7 @@ using UnityEngine.Tilemaps;
 public class SpawnHouses : MonoBehaviour
 {
     public GameObject HousePrefab;
+    public HouseSystem HouseSystem;
 
     public float xOffset;  //0.5
     public float yOffest;  //0.2
@@ -27,13 +28,16 @@ public class SpawnHouses : MonoBehaviour
                 {              
                     if (tile.name == tch.HouseSpotTileName)
                     {
-                        Debug.Log("x:" + x + " y:" + y + " tile:" + tile.name);
+                        //Debug.Log("x:" + x + " y:" + y + " tile:" + tile.name);
                         //print("here is house tile");
                         GameObject house = Instantiate(HousePrefab, null);
-                        house.name = "muj dum";
+                        //house.name = "muj dum";
+                        house.transform.parent = transform;
                         Vector3 housePos = gridLayout.CellToWorld(new Vector3Int(x - 15, y - 19, 0));
                         housePos = new Vector3(housePos.x + xOffset, housePos.y + yOffest, 0);
                         house.transform.position = housePos;
+
+                        house.GetComponent<House>().hs = HouseSystem;
                     }
                 }
             }

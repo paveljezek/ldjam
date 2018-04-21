@@ -10,25 +10,17 @@ public class HouseSystem : MonoBehaviour {
 
     void Start()
     {
-        tch.HouseSpotEnabled += OnHouseSpotEnabled;
-        tch.HouseSpotDisabled += OnHouseSpotDisabled;
 
     }
 
-    //called every frame when standing on a spot for house
-    private void OnHouseSpotEnabled(object sender, EventArgs e)
+    public void HouseSpotEnabled()
     {
-        print("HouseSystem: OnHouseSpotEnabled");
         ui.SetRender(true);
     }
 
-    private void OnHouseSpotDisabled(object sender, EventArgs e)
+
+    public void OnHouseSpotDisabled()
     {
         ui.SetRender(false);
     }
-
-    // Update is called once per frame
-    void Update () {
-		
-	}
 }

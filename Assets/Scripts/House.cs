@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class House : MonoBehaviour {
 
+    public HouseSystem hs;
+
     bool isHouseBuild;
 
     public void BuildHouse()
@@ -24,12 +26,29 @@ public class House : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        hs = GameObject.Find("HouseSystem").GetComponent<HouseSystem>();
         sr = GetComponentInChildren<SpriteRenderer>();
-        //DestroyHouse();
+        DestroyHouse();
     }
 	
 	// Update is called once per frame
 	void Update () {
 		
 	}
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.tag == "Player")
+        {
+            hs.HouseSpotEnabled();
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.tag == "Player")
+        {
+            hs.OnHouseSpotDisabled();
+        }
+    }
 }
