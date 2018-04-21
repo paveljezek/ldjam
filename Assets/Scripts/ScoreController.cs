@@ -13,8 +13,20 @@ public class ScoreController : MonoBehaviour {
 		score = 0;
 		updateScore();
 	}
+
+	void enemyKill() {
+		addScore(2);
+	}
+
+	void waveComplete() {
+		addScore(25);
+	}
+
+	void buildingBuilt() {
+		addScore(50);
+	}
 	
-	void addScore(int amount) {
+	private void addScore(int amount) {
 		score += amount;
 		updateScore();
 	}
