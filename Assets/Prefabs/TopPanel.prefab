@@ -107,10 +107,7 @@ GameObject:
   - component: {fileID: 223721388797761742}
   - component: {fileID: 114914868356824666}
   - component: {fileID: 114471628165812298}
-  - component: {fileID: 114500157255740730}
-  - component: {fileID: 114119968800885822}
   - component: {fileID: 114380765907571112}
-  - component: {fileID: 114926973979154818}
   m_Layer: 5
   m_Name: TopPanel
   m_TagString: Untagged
@@ -208,7 +205,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 10
+    m_FontSize: 9
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
@@ -266,18 +263,6 @@ MonoBehaviour:
   displayText: 1
   barText: {fileID: 114003229851210298}
   additionalText: 
---- !u!114 &114119968800885822
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1522878689431728}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9ef1694c176a40c78c89765dcc678ca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  healthBar: {fileID: 114071028355563724}
 --- !u!114 &114331065296882152
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -399,18 +384,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &114500157255740730
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1522878689431728}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e8ad1e24977a4ccc84c98d0a3134513, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  goldText: {fileID: 114331065296882152}
 --- !u!114 &114752576909195364
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -459,7 +432,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 10
+    m_FontSize: 9
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
@@ -525,25 +498,6 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
---- !u!114 &114926973979154818
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1522878689431728}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d71aa4bbaf88f43cca15001334c2c298, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  weaponText: {fileID: 114790035749845310}
-  weaponImage: {fileID: 114407448170928108}
-  weapons:
-  - staff
-  - sword
-  - pistol
-  - shotgun
-  - bfg
 --- !u!114 &114964681508267092
 MonoBehaviour:
   m_ObjectHideFlags: 1
