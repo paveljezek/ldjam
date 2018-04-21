@@ -30,15 +30,22 @@ public class EnemyMovementController : PhysicsObject
     {
         if (other.name == "LeftBouncer")
         {
-            print("1Collided with " + other.name);
             direction = 1;
         }
         else if (other.name == "RightBouncer")
         {
-            print("2Collided with " + other.name);
             direction = -1;
         }
-        else {
+        else if (other.name == "Player")
+        {
+            // TODO: make the player bounce a bit
+            return;
+            // Rigidbody2D prb = other.GetComponent<Rigidbody2D>();
+            // Vector2 moveAside = Vector2.zero;
+            // moveAside.x += targetVelocity.x * 20;
+        }
+        else
+        {
             direction *= MaybeModifyDirection();
         }
     }

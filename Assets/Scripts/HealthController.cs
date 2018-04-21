@@ -14,12 +14,12 @@ public class HealthController : MonoBehaviour {
 		updateHealth();
 	}
 	
-	void healthAdd(float amount) {
+	public void healthAdd(float amount) {
 		health = health + amount > 100 ? 100 : health + amount;
 		updateHealth();
 	}
 
-	void healthSub(float amount) {
+	public void healthSub(float amount) {
 		health -= amount;
 		updateHealth();
 	}
