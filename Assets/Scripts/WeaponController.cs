@@ -9,12 +9,23 @@ public class WeaponController : MonoBehaviour {
 	public Image weaponImage;
 
 	public string[] weapons = {"staff", "sword", "pistol", "shotgun", "bfg"};
+	int weapon;
 	// Use this for initialization
 	void Start () {
-		updateWeapon(1);
+		weapon = 0;
+		updateWeapon();
+	}
+
+	void selectWeapon(int index) {
+		weapon = index;
+		updateWeapon();
+	}
+
+	int selectedWeapon() {
+		return weapon;
 	}
 	
-	void updateWeapon(int index) {
-		weaponText.text = weapons[index];
+	void updateWeapon() {
+		weaponText.text = weapons[weapon];
 	}
 }
