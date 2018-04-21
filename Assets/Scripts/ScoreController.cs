@@ -11,8 +11,7 @@ public class ScoreController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		score = 0;
-
-		addScore(9872);
+		updateScore();
 	}
 	
 	void addScore(int amount) {

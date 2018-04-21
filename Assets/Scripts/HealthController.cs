@@ -11,7 +11,7 @@ public class HealthController : MonoBehaviour {
 
 	void Start () {
 		health = maxHealth;
-		healthSub(10);
+		updateHealth();
 	}
 	
 	void healthAdd(float amount) {
