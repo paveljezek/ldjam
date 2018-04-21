@@ -49,7 +49,7 @@ public class PlayerPlatformerController : PhysicsObject
             velocity.y = jumpTakeOffSpeed;
         }
 
-        print(move.x);
+        //print(move.x);
         if(move.x > 0.05f)
             spriteRenderer.flipX = false;
         else if(move.x < -0.05)
