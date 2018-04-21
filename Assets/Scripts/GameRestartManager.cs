@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameRestartManager : MonoBehaviour {
 
@@ -12,6 +13,6 @@ public class GameRestartManager : MonoBehaviour {
 	}
 	
 	void restart() {
-		Application.LoadLevel(Application.loadedLevel);
+		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 	}
 } 
