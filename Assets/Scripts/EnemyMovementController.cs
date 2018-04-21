@@ -8,6 +8,7 @@ public class EnemyMovementController : PhysicsObject
     public float speed = 5f;
     private List<int> directions = new List<int> {-1, 1};
     public int direction = -1;
+    private SpriteRenderer spriteRenderer;
 
     void Start()
     {
@@ -19,6 +20,9 @@ public class EnemyMovementController : PhysicsObject
         // ---------------------------
 
         direction *= MaybeModifyDirection();
+
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        FlipSprite();
     }
 
     protected override void ComputeVelocity()
@@ -46,10 +50,20 @@ public class EnemyMovementController : PhysicsObject
         {
             direction *= MaybeModifyDirection();
         }
+
+        FlipSprite();
     }
 
     private int MaybeModifyDirection()
     {
         return directions[Random.Range(0, 2)];
+    }
+
+    void FlipSprite()
+    {
+        if (direction > 0)
+            spriteRenderer.flipX = true;
+        else if (direction < 0)
+            spriteRenderer.flipX = false;
     }
 }

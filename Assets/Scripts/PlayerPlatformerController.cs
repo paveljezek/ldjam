@@ -9,13 +9,13 @@ public class PlayerPlatformerController : PhysicsObject
     private float lastHitTime = 0f;
     public HealthController hpControl;
 
-    //private SpriteRenderer spriteRenderer;
+    private SpriteRenderer spriteRenderer;
     //private Animator animator;
 
     // Use this for initialization
     void Awake()
     {
-        //spriteRenderer = GetComponent<SpriteRenderer>();
+        spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         //animator = GetComponent<Animator>();
     }
 
@@ -48,14 +48,15 @@ public class PlayerPlatformerController : PhysicsObject
         {
             velocity.y = jumpTakeOffSpeed;
         }
-        
 
-        /*bool flipSprite = (spriteRenderer.flipX ? (move.x > 0.01f) : (move.x < 0.01f));
-        if (flipSprite)
-        {
-            spriteRenderer.flipX = !spriteRenderer.flipX;
-        }
+        //print(move.x);
+        if(move.x > 0.05f)
+            spriteRenderer.flipX = false;
+        else if(move.x < -0.05)
+            spriteRenderer.flipX = true;
 
+
+        /*
         animator.SetBool("grounded", grounded);
         animator.SetFloat("velocityX", Mathf.Abs(velocity.x) / maxSpeed);*/
 
