@@ -32,11 +32,13 @@ public class PlayerPlatformerController : PhysicsObject
         }
 
         //print(move.x);
-        if(move.x > 0.05f)
-            spriteRenderer.flipX = false;
-        else if(move.x < -0.05)
-            spriteRenderer.flipX = true;
-
+        if(spriteRenderer != null)
+        {
+            if (move.x > 0.05f)
+                spriteRenderer.flipX = false;
+            else if (move.x < -0.05)
+                spriteRenderer.flipX = true;
+        }
 
         /*
         animator.SetBool("grounded", grounded);

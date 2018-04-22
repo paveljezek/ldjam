@@ -23,14 +23,18 @@ public class HealthController : MonoBehaviour {
 
 	public void healthSub(float amount) {
 		health -= amount;
-        // healthBar == null if this is not a player
-		if(health <= 0 && healthBar != null) {
-			endCanvas.GetComponent<EndStateController>().triggerEndState();
-		}
 		updateHealth();
         if (health <= 0)
         {
-            Destroy(gameObject);
+            // healthBar == null if this is not a player
+            if (healthBar != null)
+            {
+                endCanvas.GetComponent<EndStateController>().triggerEndState();
+            }
+            else {
+                print("destroy " + gameObject.name);
+                Destroy(gameObject);
+            }
         }
 	}
 
