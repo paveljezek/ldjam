@@ -27,6 +27,10 @@ public class GoldController : MonoBehaviour {
 	public bool canBuy(int amount) {
 		return gold - amount >= 0;
 	}
+
+	public void spendGold(int amount) {
+		goldSub(amount);
+	}
 	
 	void goldAdd(int amount) {
 		gold += amount;

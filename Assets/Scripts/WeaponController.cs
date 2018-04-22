@@ -12,7 +12,7 @@ public class WeaponController : MonoBehaviour {
         BFG
     }
 
-	public Text weaponText;
+	//public Text weaponText;
 	public Image weaponImage;
     public int bulletSpeed;
     public GameObject[] bullets;
@@ -26,6 +26,8 @@ public class WeaponController : MonoBehaviour {
     const float bulletSpreadRange = 30f;
     // Use this for initialization
 
+    private GameObject toppanel;
+
     Dictionary<Weapons, int> weaponStats = new Dictionary<Weapons, int>()
     {
         { Weapons.Staff, 1 },
@@ -36,7 +38,8 @@ public class WeaponController : MonoBehaviour {
     };
 
     void Start () {
-        weaponText.text = weapon.ToString();
+        toppanel = GameObject.Find("TopPanel");
+        updatePanel();
     }
 
     void Update()
@@ -71,7 +74,8 @@ public class WeaponController : MonoBehaviour {
 	void selectWeapon(Weapons wep) {
         if (weaponStats[wep] > 0) {
             weapon = wep;
-            weaponText.text = weapon.ToString();
+            //weaponText.text = weapon.ToString();
+            updatePanel();
         }
         else
         {
@@ -128,5 +132,10 @@ public class WeaponController : MonoBehaviour {
     public void decreaseWeaponLevel(Weapons weptype)
     {
         weaponStats[weptype] -= 1;
+    }
+
+    private void updatePanel() {
+        toppanel.GetComponentInChildren<WeaponImageChanger>().updateImage(weapon.ToString());
+        //weaponText.text = weapon.ToString();
     }
 }
