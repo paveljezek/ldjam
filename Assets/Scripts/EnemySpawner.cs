@@ -6,16 +6,21 @@ public class EnemySpawner : MonoBehaviour {
     public GameObject enemyType;
     public GameObject enemyType2;
 
-    public float spawnTime = 3f;
     public Transform[] spawnPoints;
 
+    const float minSpawnTime = 1f;
+    const float maxSpawnTime = 5f;
+    float currentMinSpawnTime;
+    float spawnTime;
+    float spawnTimeDecrement = 0.1f;
 
-	// Use this for initialization
-	void Start () {
-        // can be changed to use random intervals by calling Invoke() in Invoke()
-        InvokeRepeating("Spawn", spawnTime, spawnTime);
+    // Use this for initialization
+    void Start () {
+        spawnTime = maxSpawnTime;
+        currentMinSpawnTime = maxSpawnTime - 0.1f;
+
+        Invoke("Spawn", minSpawnTime);//spawn first enemy right away
 	}
-	
 
     void Spawn()
     {
@@ -29,6 +34,24 @@ public class EnemySpawner : MonoBehaviour {
                 spawnPoints[spawnPointIndex].rotation
             );
             enemy.transform.parent = transform;
+
+            //Spawn time:
+
+            spawnTime = Random.Range(currentMinSpawnTime, maxSpawnTime);
+            if (randomEnemyType == enemyType2)//enemy2 is a bit slower so delay a bit
+            {
+                spawnTime += 0.5f;     
+            }
+
+            currentMinSpawnTime -= spawnTimeDecrement;
+            if (currentMinSpawnTime < minSpawnTime)
+            {
+                currentMinSpawnTime = minSpawnTime;
+            }
+
+            //print(spawnTime + " curmin:" + currentMinSpawnTime);
+
+            Invoke("Spawn", spawnTime);
         }
     }
 }
