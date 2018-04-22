@@ -5,7 +5,6 @@ using UnityEngine;
 public class InstanceKiller : MonoBehaviour {
     void OnTriggerEnter2D(Collider2D other)
     {
-        print("trigger enter");
         if(other.gameObject.tag == "Player") {
             other.gameObject.GetComponentInParent<HealthController>().healthSub(100);
         } else {
