@@ -13,6 +13,8 @@ public class WeaponController : MonoBehaviour {
         BFG
     }
 
+    private Animator animator;
+
     public int bulletSpeed;
     public GameObject[] bullets;
 
@@ -45,6 +47,8 @@ public class WeaponController : MonoBehaviour {
         selectWeapon(Weapons.Staff);
         updatePanel();
         playerPlatformer = gameObject.GetComponent<PlayerPlatformerController>();
+        animator = GetComponentInChildren<Animator>();
+
     }
 
     void Update()
@@ -96,6 +100,8 @@ public class WeaponController : MonoBehaviour {
     void useWeapon()
     {
         //playerPlatformer.setAnimationState(PlayerPlatformerController.MovementState.Attacking);
+        animator.SetTrigger("Meele");
+
         if (weapon <= Weapons.Sword)
         {
             MeleeHandler mhandler = gameObject.GetComponentInChildren<MeleeHandler>();
