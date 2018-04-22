@@ -31,8 +31,22 @@ public class EnemyMovementController : PhysicsObject
         targetVelocity.x = speed * direction;
     }
 
+    private void OnCollisionEnter2D(Collision2D other) {
+        if (other.collider.tag == "Player")
+        {
+            Rigidbody2D prb = other.rigidbody;
+            Vector2 moveAside = new Vector2(direction * 3, 2);
+            prb.AddForceAtPosition(moveAside, prb.transform.position, ForceMode2D.Impulse);
+
+            direction *= -1;
+
+            print("flip");
+        }
+     }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
+        print("touch");
         if (other.name == "LeftBouncer")
         {
             direction = 1;
@@ -41,11 +55,9 @@ public class EnemyMovementController : PhysicsObject
         {
             direction = -1;
         }
-        else if (other.name == "Player")
+        else if (other.tag == "Player")
         {
-            Rigidbody2D prb = other.GetComponent<Rigidbody2D>();
-            Vector2 moveAside = new Vector2(direction * 3, 2);
-            prb.AddForceAtPosition(moveAside, prb.transform.position, ForceMode2D.Impulse);
+            
         }
         else
         {
