@@ -84,10 +84,28 @@ public class House : MonoBehaviour {
                 Cost = 300;
                 break;
         }
+
+        Invoke("SetSpriteByLevel", 0.5f);//delay loading (wait for HouseSystem to init)
     }
-	
-	// Update is called once per frame
-	void Update () {
+
+    void SetSpriteByLevel()
+    {
+        switch (Level)
+        {
+            case 1:
+                sr.sprite = hs.level1;
+                break;
+            case 2:
+                sr.sprite = hs.level2;
+                break;
+            case 3:
+                sr.sprite = hs.level3;
+                break;
+        }
+    }
+
+        // Update is called once per frame
+        void Update () {
 		
 	}
 

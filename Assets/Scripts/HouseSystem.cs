@@ -12,6 +12,10 @@ public class HouseSystem : MonoBehaviour {
     public Sprite buildings_weaponsPistol;
     public Sprite buildings_weaponsShotgun;
 
+    public Sprite level1;
+    public Sprite level2;
+    public Sprite level3;
+
     House currentHouse;
 
     void Start()
