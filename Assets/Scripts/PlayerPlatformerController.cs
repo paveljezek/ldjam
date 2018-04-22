@@ -66,7 +66,6 @@ public class PlayerPlatformerController : PhysicsObject
             return;
 
         moveState = ms;
-
         switch(ms)
         {
             case MovementState.Idle:

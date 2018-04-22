@@ -137,14 +137,10 @@ public class WeaponController : MonoBehaviour {
         }
     }
 
-    public void increaseWeaponLevel(Weapons weptype)
+    public void setWeaponLevel(Weapons wt, int level)
     {
-        weaponStats[weptype] += 1;
-    }
-
-    public void decreaseWeaponLevel(Weapons weptype)
-    {
-        weaponStats[weptype] -= 1;
+        print("set weapon level of type " + wt.ToString() + " to " + level);
+        weaponStats[wt] = level;
     }
 
     private void updatePanel() {

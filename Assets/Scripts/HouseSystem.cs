@@ -18,6 +18,8 @@ public class HouseSystem : MonoBehaviour {
 
     House currentHouse;
 
+    public List<House> houseList;
+
     void Start()
     {
         ui.injectHouseSystem(this);
@@ -39,5 +41,18 @@ public class HouseSystem : MonoBehaviour {
     public void OnHouseSpotDisabled()
     {
         ui.SetRender(false);
+    }
+
+    public int findHighestHouseLevelByWepType(WeaponController.Weapons weptype)
+    {
+        int highestLevel = -1;
+        foreach (House h in houseList)
+        {
+            if (h.weapon == weptype && h.Level > highestLevel)
+            {
+                highestLevel = h.Level;
+            }
+        }
+        return highestLevel;
     }
 }
