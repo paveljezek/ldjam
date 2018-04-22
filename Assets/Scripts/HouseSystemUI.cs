@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -10,6 +11,8 @@ public class HouseSystemUI : MonoBehaviour {
     HouseSystem hs;
     GoldController goldc;
 
+    public PriceText priceText;
+
 	// Use this for initialization
 	void Start () {
         AttachToPlayer();
@@ -17,6 +20,7 @@ public class HouseSystemUI : MonoBehaviour {
         canvas = GetComponentInChildren<CanvasRenderer>();
         SetRender(false);
         goldc = GetComponentInParent<GoldController>();
+        //priceText = GetComponentInChildren<PriceText>();
     }
 
     public void injectHouseSystem(HouseSystem houseSystem)
@@ -44,6 +48,11 @@ public class HouseSystemUI : MonoBehaviour {
                 BuildShotgun();
             }
         }
+    }
+
+    public void ShowPrice(int cost)
+    {
+        priceText.SetPriceText(cost);
     }
 
     void BuildSword()

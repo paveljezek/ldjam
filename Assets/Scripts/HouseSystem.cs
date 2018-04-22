@@ -32,6 +32,7 @@ public class HouseSystem : MonoBehaviour {
     {
         ui.SetRender(true);
         currentHouse = house;
+        ui.ShowPrice(currentHouse.Cost);
     }
 
 
