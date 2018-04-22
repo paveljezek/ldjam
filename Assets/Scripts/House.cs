@@ -6,12 +6,16 @@ using UnityEngine;
 public class House : MonoBehaviour {
 
     public HouseSystem hs;
+    SpriteRenderer sr;
 
     public int HealthPoints;
     public int Cost;
     public int Level;
 
     bool isHouseBuild;
+
+    public WeaponController.Weapons weapon;
+    public SpriteRenderer weaponSprite;
 
     public void BuildHouse()
     {
@@ -21,17 +25,36 @@ public class House : MonoBehaviour {
         }
         isHouseBuild = true;
         sr.enabled = true;
+        weaponSprite.enabled = true;
+
+        SetWeapon(WeaponController.Weapons.Pistol);
         
+    }
+
+    void SetWeapon(WeaponController.Weapons w)
+    {
+        weapon = w;
+
+        if(w == WeaponController.Weapons.Sword)
+        {
+            weaponSprite.sprite = hs.buildings_weaponsSword;
+        }
+        else if (w == WeaponController.Weapons.Pistol)
+        {
+            weaponSprite.sprite = hs.buildings_weaponsPistol;
+        }
+        else if (w == WeaponController.Weapons.Shotgun)
+        {
+            weaponSprite.sprite = hs.buildings_weaponsShotgun;
+        }
     }
 
     public void DestroyHouse()
     {
         isHouseBuild = false;
         sr.enabled = false;
+        weaponSprite.enabled = false;
     }
-
-
-    SpriteRenderer sr;
 
 	// Use this for initialization
 	void Start () {

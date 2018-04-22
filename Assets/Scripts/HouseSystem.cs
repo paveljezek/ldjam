@@ -8,6 +8,10 @@ public class HouseSystem : MonoBehaviour {
     public TileCollisionHandler tch;
     public HouseSystemUI ui;
 
+    public Sprite buildings_weaponsSword;
+    public Sprite buildings_weaponsPistol;
+    public Sprite buildings_weaponsShotgun;
+
     House currentHouse;
 
     void Start()
