@@ -8,7 +8,7 @@ public class GoldController : MonoBehaviour {
 
 	public Text goldText;
 
-	int gold;
+	private int gold;
 	// Use this for initialization
 	void Start () {
 		gold = 0;
@@ -20,8 +20,12 @@ public class GoldController : MonoBehaviour {
         return true;//always enough gold :)
     }
 
-	public void enemyKilled() {
+	public void enemyKill() {
 		goldAdd(5);
+	}
+
+	public bool canBuy(int amount) {
+		return gold - amount >= 0;
 	}
 	
 	void goldAdd(int amount) {
