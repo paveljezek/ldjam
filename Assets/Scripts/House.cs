@@ -6,7 +6,10 @@ using UnityEngine;
 public class House : MonoBehaviour {
 
     public HouseSystem hs;
+
     public int HealthPoints;
+    public int Cost;
+    public int Level;
 
     bool isHouseBuild;
 
@@ -36,6 +39,28 @@ public class House : MonoBehaviour {
         sr = GetComponentInChildren<SpriteRenderer>();
         DestroyHouse();
         //BuildHouse();
+    }
+
+    public void SetHouse(int level)
+    {
+        Level = level;
+
+        //see Holy GDD by Pavel
+        switch (level)
+        {
+            case 1:
+                HealthPoints = 30;
+                Cost = 100;
+                break;
+            case 2:
+                HealthPoints = 40;
+                Cost = 200;
+                break;
+            case 3:
+                HealthPoints = 50;
+                Cost = 300;
+                break;
+        }
     }
 	
 	// Update is called once per frame

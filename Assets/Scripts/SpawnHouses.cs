@@ -9,10 +9,39 @@ public class SpawnHouses : MonoBehaviour
     public float xOffset;  //0.5
     public float yOffest;  //0.2
 
+    TileCollisionHandler tch;
+
+    bool isHouseTile(string name)
+    {
+        if (HouseTileLevel(name) < 0)
+            return false;
+        else
+            return true;
+
+        //7,8,9 in sprite sheet
+        /*return ((name == (tch.HouseSpotTileName + "7")) ||
+            (name == (tch.HouseSpotTileName + "8")) ||
+            (name == (tch.HouseSpotTileName + "9")));*/
+    }
+
+    int HouseTileLevel(string name)
+    {
+        if ((name == (tch.HouseSpotTileName + "7")))
+            return 1;
+
+        if ((name == (tch.HouseSpotTileName + "8")))
+            return 2;
+
+        if ((name == (tch.HouseSpotTileName + "9")))
+            return 3;
+
+        return -1;
+    }
+
     void Start()
     {
         GridLayout gridLayout = transform.parent.GetComponentInParent<GridLayout>();
-        TileCollisionHandler tch = GetComponent<TileCollisionHandler>();
+        tch = GetComponent<TileCollisionHandler>();
 
         Tilemap tilemap = GetComponent<Tilemap>();
 
@@ -26,21 +55,21 @@ public class SpawnHouses : MonoBehaviour
                 TileBase tile = allTiles[x + y * bounds.size.x];
                 if (tile != null)
                 {              
-                    if (tile.name == tch.HouseSpotTileName)
+                    if (isHouseTile(tile.name))
                     {
-                        //Debug.Log("x:" + x + " y:" + y + " tile:" + tile.name);
-                        //print("here is house tile");
                         GameObject house = Instantiate(HousePrefab, null);
-                        //house.name = "muj dum";
                         house.transform.parent = transform;
+
                         Vector3 housePos = gridLayout.CellToWorld(new Vector3Int(x - 15, y - 7, 0));
                         housePos = new Vector3(housePos.x + xOffset, housePos.y + yOffest, 0);
                         house.transform.position = housePos;
 
                         House houseComp = house.GetComponent<House>();
                         houseComp.hs = HouseSystem;
-                        houseComp.HealthPoints = 30;//see Holy GDD by Pavel
 
+                        //L1 - L3 specific
+                        int houseLevel = HouseTileLevel(tile.name);
+                        houseComp.SetHouse(houseLevel);
                     }
                 }
             }
