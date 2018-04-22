@@ -26,20 +26,56 @@ public class WeaponController : MonoBehaviour {
     const float bulletSpreadRange = 30f;
     // Use this for initialization
 
+    Dictionary<Weapons, int> weaponStats = new Dictionary<Weapons, int>()
+    {
+        { Weapons.Staff, 1 },
+        { Weapons.Sword, 0 },
+        { Weapons.Pistol, 0 },
+        { Weapons.Shotgun, 0 },
+        { Weapons.BFG, 0 }
+    };
+
     void Start () {
 
 	}
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.RightControl))
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            selectWeapon(Weapons.Staff);
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            selectWeapon(Weapons.Sword);
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            selectWeapon(Weapons.Pistol);
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha4))
+        {
+            selectWeapon(Weapons.Shotgun);
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha5))
+        {
+            selectWeapon(Weapons.BFG);
+        }
+        // don't shoot if picking a weapon
+        else if (Input.GetKeyDown(KeyCode.RightControl))
         {
             useWeapon();
         }
     }
 
 	void selectWeapon(Weapons wep) {
-		weapon = wep;
+        if (weaponStats[wep] > 0) {
+            weapon = wep;
+        }
+        else
+        {
+            print("Pojeb si mamu");
+        }
 	}
 
 	Weapons selectedWeapon() {
