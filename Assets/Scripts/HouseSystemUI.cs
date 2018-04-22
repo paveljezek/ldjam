@@ -30,17 +30,17 @@ public class HouseSystemUI : MonoBehaviour {
         {
             if (Input.GetKeyDown(KeyCode.X))
             {
-                print("building X house");
+                //print("building X house");
                 BuildSword();
             }
             else if (Input.GetKeyDown(KeyCode.C))
             {
-                print("building C house");
+                //print("building C house");
                 BuildPistol();
             }
             else if (Input.GetKeyDown(KeyCode.V))
             {
-                print("building V house");
+                //print("building V house");
                 BuildShotgun();
             }
         }
