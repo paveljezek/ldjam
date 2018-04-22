@@ -30,7 +30,6 @@ public class House : MonoBehaviour {
         weaponSprite.enabled = true;
 
         // set weapon if this is the highest tier house built
-        print("gonna search this, buddy");
         int maxLev = hs.findHighestHouseLevelByWepType(w);
         if (maxLev < Level) {
             wc.setWeaponLevel(w, Level);

@@ -139,7 +139,11 @@ public class WeaponController : MonoBehaviour {
 
     public void setWeaponLevel(Weapons wt, int level)
     {
-        print("set weapon level of type " + wt.ToString() + " to " + level);
+        if (level == 0)
+        {
+            // TODO: equip highest usable weapon
+            selectWeapon(Weapons.Staff);
+        }
         weaponStats[wt] = level;
     }
 
