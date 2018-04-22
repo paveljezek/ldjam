@@ -21,6 +21,8 @@ public class WeaponController : MonoBehaviour {
 	Weapons weapon = Weapons.Staff;
     // set to the following type with bullets
     const int nonBulletWeps = (int)Weapons.Pistol;
+    const float bulletXOffset = 1f;
+    const float bulletSpreadRange = 30f;
     // Use this for initialization
 
     void Start () {
@@ -58,14 +60,23 @@ public class WeaponController : MonoBehaviour {
             return;
         }
 
-        // position has to be offseted you dumb idiot
-        GameObject bullet = Instantiate(bullets[(int)weapon - nonBulletWeps], transform.position, Quaternion.identity);
-        Rigidbody2D brb = bullet.GetComponent<Rigidbody2D>();
         SpriteRenderer sr = gameObject.GetComponentInChildren<SpriteRenderer>();
-        Vector2 forceVector = Vector2.zero;
+        int direction = -1;
+        if (!sr.flipX) direction = 1;
+
+        Vector2 bulletSpawnPos = transform.position;
+        bulletSpawnPos.x += direction * bulletXOffset;
+
+        // position has to be offseted you dumb idiot
+        GameObject bullet = Instantiate(bullets[(int)weapon - nonBulletWeps], bulletSpawnPos, Quaternion.identity);
         float bulletSpeed = bullet.GetComponent<BulletController>().speed;
-        if (sr.flipX) forceVector.x -= bulletSpeed;
-        else forceVector.x += bulletSpeed;
-        brb.AddForce(forceVector);
+        Vector2 forceVector = new Vector2(bulletSpeed * direction, 0);
+
+        Rigidbody2D brb = bullet.GetComponent<Rigidbody2D>();
+        brb.AddForce(
+            forceVector + 
+            new Vector2(Random.Range(-bulletSpreadRange, bulletSpreadRange),
+                        Random.Range(-bulletSpreadRange, bulletSpreadRange))
+        );
     }
 }
