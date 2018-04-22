@@ -71,6 +71,7 @@ public class WeaponController : MonoBehaviour {
 	void selectWeapon(Weapons wep) {
         if (weaponStats[wep] > 0) {
             weapon = wep;
+            weaponText.text = weapon.ToString();
         }
         else
         {
@@ -80,10 +81,6 @@ public class WeaponController : MonoBehaviour {
 
 	Weapons selectedWeapon() {
 		return weapon;
-	}
-	
-	void updateWeapon() {
-		weaponText.text = weapon.ToString();
 	}
 
     void useWeapon()
@@ -121,5 +118,15 @@ public class WeaponController : MonoBehaviour {
 
             );
         }
+    }
+
+    public void increaseWeaponLevel(Weapons weptype)
+    {
+        weaponStats[weptype] += 1;
+    }
+
+    public void decreaseWeaponLevel(Weapons weptype)
+    {
+        weaponStats[weptype] -= 1;
     }
 }
