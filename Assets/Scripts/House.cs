@@ -17,6 +17,8 @@ public class House : MonoBehaviour {
     public WeaponController.Weapons weapon;
     public SpriteRenderer weaponSprite;
 
+    private WeaponController wc;
+
     public void BuildHouse(WeaponController.Weapons w)
     {
         if(!isHouseBuild) {
@@ -27,8 +29,13 @@ public class House : MonoBehaviour {
         sr.enabled = true;
         weaponSprite.enabled = true;
 
+        // set weapon if this is the highest tier house built
+        int maxLev = hs.findHighestHouseLevelByWepType(w);
+        if (maxLev < Level) {
+            wc.setWeaponLevel(w, Level);
+        }
+
         SetWeapon(w);
-        
     }
 
     void SetWeapon(WeaponController.Weapons w)
@@ -54,12 +61,26 @@ public class House : MonoBehaviour {
         isHouseBuild = false;
         sr.enabled = false;
         weaponSprite.enabled = false;
+
+        WeaponController.Weapons oldType = weapon;
+        weapon = WeaponController.Weapons.Staff;
+        // TODO: find highest weapon tier house and asssign it to WeaponController
+        int maxLev = hs.findHighestHouseLevelByWepType(weapon);
+        if (maxLev == -1)
+        {
+            wc.setWeaponLevel(oldType, 0);
+        }
+        else
+        {
+            wc.setWeaponLevel(oldType, maxLev);
+        }
     }
 
 	// Use this for initialization
 	void Start () {
         hs = GameObject.Find("HouseSystem").GetComponent<HouseSystem>();
         sr = GetComponentInChildren<SpriteRenderer>();
+        wc = GameObject.Find("Player").GetComponent<WeaponController>();
         DestroyHouse();
         //BuildHouse();
     }
@@ -90,6 +111,7 @@ public class House : MonoBehaviour {
 
     void SetSpriteByLevel()
     {
+        hs.houseList.Add(this);
         switch (Level)
         {
             case 1:

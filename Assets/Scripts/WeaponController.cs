@@ -137,14 +137,14 @@ public class WeaponController : MonoBehaviour {
         }
     }
 
-    public void increaseWeaponLevel(Weapons weptype)
+    public void setWeaponLevel(Weapons wt, int level)
     {
-        weaponStats[weptype] += 1;
-    }
-
-    public void decreaseWeaponLevel(Weapons weptype)
-    {
-        weaponStats[weptype] -= 1;
+        if (level == 0)
+        {
+            // TODO: equip highest usable weapon
+            selectWeapon(Weapons.Staff);
+        }
+        weaponStats[wt] = level;
     }
 
     private void updatePanel() {
