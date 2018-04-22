@@ -13,8 +13,6 @@ public class WeaponController : MonoBehaviour {
         BFG
     }
 
-	//public Text weaponText;
-	public Image weaponImage;
     public int bulletSpeed;
     public GameObject[] bullets;
 
@@ -44,6 +42,7 @@ public class WeaponController : MonoBehaviour {
     void Start () {
 
         toppanel = GameObject.Find("TopPanel");
+        selectWeapon(Weapons.Staff);
         updatePanel();
         playerPlatformer = gameObject.GetComponent<PlayerPlatformerController>();
     }

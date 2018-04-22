@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: 3e2c5e522e2d7415aa5188dec6bd2795
+timeCreated: 1524408843
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Yellowtail
+  fontNames:
+  - Yellowtail
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
