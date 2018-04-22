@@ -25,7 +25,7 @@ public class WeaponController : MonoBehaviour {
 
     // set to the following type with bullets
     const int nonBulletWeps = (int)Weapons.Pistol;
-    const float bulletXOffset = 1f;
+    const float bulletXOffset = 0.7f;
     const float bulletSpreadRange = 30f;
 
     private PlayerPlatformerController playerPlatformer;
@@ -136,6 +136,8 @@ public class WeaponController : MonoBehaviour {
 
         Vector2 bulletSpawnPos = transform.position;
         bulletSpawnPos.x += direction * bulletXOffset;
+        // coordinate bullet spawn with the sprite
+        bulletSpawnPos.y -= 0.3f;
         
         int numBullets = 1;
         if (weapon == Weapons.Shotgun) numBullets = 2;
