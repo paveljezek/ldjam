@@ -12,7 +12,7 @@ public class EnemySpawner : MonoBehaviour {
     const float maxSpawnTime = 5f;
     float currentMinSpawnTime;
     float spawnTime;
-    float spawnTimeDecrement = 0.1f;
+    float spawnTimeDecrement = 0.3f;
 
     // Use this for initialization
     void Start () {

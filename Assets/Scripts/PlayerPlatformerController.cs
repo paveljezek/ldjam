@@ -18,6 +18,8 @@ public class PlayerPlatformerController : PhysicsObject
 
     public BoxCollider2D meeleTrigger;
 
+    bool canChangeFromAttacking;
+
     public enum MovementState
     {
         Idle,
@@ -34,6 +36,8 @@ public class PlayerPlatformerController : PhysicsObject
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         weaponController = GetComponent<WeaponController>();
         animator = GetComponentInChildren<Animator>();
+
+        canChangeFromAttacking = true;
     }
 
     private int getCurrentWeapon()
@@ -51,7 +55,7 @@ public class PlayerPlatformerController : PhysicsObject
                 animator.runtimeAnimatorController = walkingAnimationControllers[getCurrentWeapon()];
             break;
             case MovementState.Attacking:
-                animator.runtimeAnimatorController = walkingAnimationControllers[getCurrentWeapon()];
+                animator.runtimeAnimatorController = attackingAnimationControllers[getCurrentWeapon()];
             break;
             default:
                 print("Go home computer, you're drunk.");
@@ -59,13 +63,32 @@ public class PlayerPlatformerController : PhysicsObject
         }
     }
 
+    void UnlockCanChangeFromAttacking()
+    {
+        canChangeFromAttacking = true;
+    }
+
     public void setAnimationState(MovementState ms)
     {
+        print("yello>" + ms.ToString());
+
         // TODO: allow locking so that, e.g. attack animations get finished?
 
         // don't restart the animation if already running
         if (moveState == ms)
             return;
+
+        if (!canChangeFromAttacking)
+        {
+            return;
+        }
+        {
+            if(ms == MovementState.Attacking)
+            {
+                canChangeFromAttacking = false;
+                Invoke("UnlockCanChangeFromAttacking", 0.545f);
+            }
+        }
 
         moveState = ms;
         switch(ms)
@@ -77,7 +100,7 @@ public class PlayerPlatformerController : PhysicsObject
                 animator.runtimeAnimatorController = walkingAnimationControllers[getCurrentWeapon()];
                 break;
             case MovementState.Attacking:
-                animator.runtimeAnimatorController = walkingAnimationControllers[getCurrentWeapon()];
+                animator.runtimeAnimatorController = attackingAnimationControllers[getCurrentWeapon()];
                 break;
             default:
                 print("Go home computer, you're drunk.");
