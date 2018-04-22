@@ -709,6 +709,9 @@ MonoBehaviour:
     type: 3}
   buildings_weaponsShotgun: {fileID: 21300004, guid: c41e5f4a773ef4048ad39dcc067b6154,
     type: 3}
+  level1: {fileID: 21300000, guid: f72c8f47444ac44419ed70012ac48c43, type: 3}
+  level2: {fileID: 21300002, guid: f72c8f47444ac44419ed70012ac48c43, type: 3}
+  level3: {fileID: 21300004, guid: f72c8f47444ac44419ed70012ac48c43, type: 3}
 --- !u!114 &114238200018079218
 MonoBehaviour:
   m_ObjectHideFlags: 1
