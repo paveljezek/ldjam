@@ -13,13 +13,4 @@ public class InstanceKiller : MonoBehaviour {
             Destroy(other.gameObject);
         }
     }
-
-    private void OnCollisionEnter2D(Collision2D other)
-    {
-        print("on col enter");
-        if (other.gameObject.name == "Player")
-        {
-            other.gameObject.GetComponent<HealthController>().healthSub(100);
-        }
-    }
 }
