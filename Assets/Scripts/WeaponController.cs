@@ -36,8 +36,8 @@ public class WeaponController : MonoBehaviour {
     };
 
     void Start () {
-
-	}
+        weaponText.text = weapon.ToString();
+    }
 
     void Update()
     {
