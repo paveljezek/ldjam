@@ -1,21 +1,22 @@
 fileFormatVersion: 2
-guid: 91e200b3e19973d4b95fd192b6bf83df
-timeCreated: 1524386619
+guid: 508aa9de9c3361349a3533677d37fee5
+timeCreated: 1524391355
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: pope_idle_0
-    21300002: pope_idle_1
-    21300004: pope_idle_2
-    21300006: pope_idle_3
-    21300008: pope_idle_4
-    21300010: pope_idle_5
-    21300012: pope_idle_6
-    21300014: pope_idle_7
-    21300016: pope_idle_8
-    21300018: pope_idle_9
-    21300020: pope_idle_10
-    21300022: pope_idle_11
+    21300000: pope_walking_sword_0
+    21300002: pope_walking_sword_1
+    21300004: pope_walking_sword_2
+    21300006: pope_walking_sword_3
+    21300008: pope_walking_sword_4
+    21300010: pope_walking_sword_5
+    21300012: pope_walking_sword_6
+    21300014: pope_walking_sword_7
+    21300016: pope_walking_sword_8
+    21300018: pope_walking_sword_9
+    21300020: pope_walking_sword_10
+    21300022: pope_walking_sword_11
+    21300024: pope_walking_sword_12
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -93,7 +94,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: pope_idle_0
+      name: pope_walking_sword_0
       rect:
         serializedVersion: 2
         x: 0
@@ -107,7 +108,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: pope_idle_1
+      name: pope_walking_sword_1
       rect:
         serializedVersion: 2
         x: 128
@@ -121,7 +122,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: pope_idle_2
+      name: pope_walking_sword_2
       rect:
         serializedVersion: 2
         x: 256
@@ -135,7 +136,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: pope_idle_3
+      name: pope_walking_sword_3
       rect:
         serializedVersion: 2
         x: 384
@@ -149,7 +150,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: pope_idle_4
+      name: pope_walking_sword_4
       rect:
         serializedVersion: 2
         x: 0
@@ -163,7 +164,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: pope_idle_5
+      name: pope_walking_sword_5
       rect:
         serializedVersion: 2
         x: 128
@@ -177,7 +178,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: pope_idle_6
+      name: pope_walking_sword_6
       rect:
         serializedVersion: 2
         x: 256
@@ -191,7 +192,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: pope_idle_7
+      name: pope_walking_sword_7
       rect:
         serializedVersion: 2
         x: 384
@@ -205,7 +206,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: pope_idle_8
+      name: pope_walking_sword_8
       rect:
         serializedVersion: 2
         x: 0
@@ -219,7 +220,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: pope_idle_9
+      name: pope_walking_sword_9
       rect:
         serializedVersion: 2
         x: 128
@@ -233,7 +234,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: pope_idle_10
+      name: pope_walking_sword_10
       rect:
         serializedVersion: 2
         x: 256
@@ -247,11 +248,25 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: pope_idle_11
+      name: pope_walking_sword_11
       rect:
         serializedVersion: 2
         x: 384
         y: 128
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: pope_walking_sword_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
         width: 128
         height: 128
       alignment: 0
