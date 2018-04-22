@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
 public class WeaponController : MonoBehaviour {
     public enum Weapons {
         Staff,
@@ -20,26 +21,31 @@ public class WeaponController : MonoBehaviour {
     // the idiot who left "public" at "weapon" here for debugging should
     //  himself get the fuck rid of it
     public Weapons weapon = Weapons.Staff;
+    public const KeyCode ATTACK_BUTTON = KeyCode.RightControl;
+
     // set to the following type with bullets
     const int nonBulletWeps = (int)Weapons.Pistol;
     const float bulletXOffset = 1f;
     const float bulletSpreadRange = 30f;
-    // Use this for initialization
+
+    private PlayerPlatformerController playerPlatformer;
 
     private GameObject toppanel;
 
     Dictionary<Weapons, int> weaponStats = new Dictionary<Weapons, int>()
     {
         { Weapons.Staff, 1 },
-        { Weapons.Sword, 1 },
-        { Weapons.Pistol, 1 },
-        { Weapons.Shotgun, 1 },
+        { Weapons.Sword, 0 },
+        { Weapons.Pistol, 0 },
+        { Weapons.Shotgun, 0 },
         { Weapons.BFG, 0 }
     };
 
     void Start () {
+
         toppanel = GameObject.Find("TopPanel");
         updatePanel();
+        playerPlatformer = gameObject.GetComponent<PlayerPlatformerController>();
     }
 
     void Update()
@@ -65,17 +71,18 @@ public class WeaponController : MonoBehaviour {
             selectWeapon(Weapons.BFG);
         }
         // don't shoot if picking a weapon
-        else if (Input.GetKeyDown(KeyCode.RightControl))
+        else if (Input.GetKeyDown(ATTACK_BUTTON))
         {
             useWeapon();
         }
     }
 
 	void selectWeapon(Weapons wep) {
-        if (weaponStats[wep] > 0) {
+        if (wep != weapon && weaponStats[wep] > 0) {
             weapon = wep;
-            //weaponText.text = weapon.ToString();
             updatePanel();
+
+            playerPlatformer.setAccordingWeaponAnimation(weapon);
         }
         else
         {
@@ -83,12 +90,13 @@ public class WeaponController : MonoBehaviour {
         }
 	}
 
-	Weapons selectedWeapon() {
+	public Weapons getCurrentWeapon() {
 		return weapon;
 	}
 
     void useWeapon()
     {
+        playerPlatformer.setAnimationState(PlayerPlatformerController.MovementState.Attacking);
         if (weapon < Weapons.Staff)
         {
             print("Fuck you, implement it yourself, I am only doing bullets now.");
@@ -101,8 +109,7 @@ public class WeaponController : MonoBehaviour {
 
         Vector2 bulletSpawnPos = transform.position;
         bulletSpawnPos.x += direction * bulletXOffset;
-
-        // position has to be offseted you dumb idiot
+        
         int numBullets = 1;
         if (weapon == Weapons.Shotgun) numBullets = 2;
 
@@ -136,6 +143,5 @@ public class WeaponController : MonoBehaviour {
 
     private void updatePanel() {
         toppanel.GetComponentInChildren<WeaponImageChanger>().updateImage(weapon.ToString());
-        //weaponText.text = weapon.ToString();
     }
 }

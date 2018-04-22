@@ -70,7 +70,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1155881889734186}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.11, y: -4.48, z: 0.061035156}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4032468599728942}
@@ -109,7 +109,7 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.26, y: 0.79}
+  m_Offset: {x: -0.26, y: 0}
   m_Size: {x: 0.58198535, y: 1.4110568}
   m_Direction: 0
 --- !u!95 &95940278010336302
@@ -144,6 +144,21 @@ MonoBehaviour:
   gravityModifier: 0.95
   maxSpeed: 5
   jumpTakeOffSpeed: 17
+  idleAnimationControllers:
+  - {fileID: 9100000, guid: 43b6f4fe7aa1b44458f519f0b03a54bc, type: 2}
+  - {fileID: 9100000, guid: d66ac204fab82db42817280fcd57772e, type: 2}
+  - {fileID: 9100000, guid: 801db9d62a0e87d49b1a698f46eea075, type: 2}
+  - {fileID: 9100000, guid: f6d4fb4b6eba54743b87cb25b29b85bd, type: 2}
+  walkingAnimationControllers:
+  - {fileID: 9100000, guid: 0b76395b8d76af249b2c25f3f1912220, type: 2}
+  - {fileID: 9100000, guid: f2f77540ef7e7724482be6de7d77bfc8, type: 2}
+  - {fileID: 9100000, guid: 10cb2f6adf9903846ae2d25611907bd4, type: 2}
+  - {fileID: 9100000, guid: 2d71c89723fbc1e44abbf19f5dbcae93, type: 2}
+  attackingAnimationControllers:
+  - {fileID: 9100000, guid: 9623b7b5a3063a24ca58ebe3fe3629e6, type: 2}
+  - {fileID: 9100000, guid: 8ed2ba234028b5d43944228b6bdb3c8b, type: 2}
+  - {fileID: 9100000, guid: 10cb2f6adf9903846ae2d25611907bd4, type: 2}
+  - {fileID: 9100000, guid: f6d4fb4b6eba54743b87cb25b29b85bd, type: 2}
 --- !u!114 &114485792665817516
 MonoBehaviour:
   m_ObjectHideFlags: 1
