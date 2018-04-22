@@ -12,8 +12,6 @@ public class WeaponController : MonoBehaviour {
         BFG
     }
 
-	//public Text weaponText;
-	public Image weaponImage;
     public int bulletSpeed;
     public GameObject[] bullets;
 
@@ -39,6 +37,7 @@ public class WeaponController : MonoBehaviour {
 
     void Start () {
         toppanel = GameObject.Find("TopPanel");
+        selectWeapon(Weapons.Staff);
         updatePanel();
     }
 
@@ -74,7 +73,6 @@ public class WeaponController : MonoBehaviour {
 	void selectWeapon(Weapons wep) {
         if (weaponStats[wep] > 0) {
             weapon = wep;
-            //weaponText.text = weapon.ToString();
             updatePanel();
         }
         else
@@ -136,6 +134,5 @@ public class WeaponController : MonoBehaviour {
 
     private void updatePanel() {
         toppanel.GetComponentInChildren<WeaponImageChanger>().updateImage(weapon.ToString());
-        //weaponText.text = weapon.ToString();
     }
 }
