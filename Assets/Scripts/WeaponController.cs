@@ -16,9 +16,10 @@ public class WeaponController : MonoBehaviour {
 	public Image weaponImage;
     public int bulletSpeed;
     public GameObject[] bullets;
-    
 
-	Weapons weapon = Weapons.Staff;
+    // the idiot who left "public" at "weapon" here for debugging should
+    //  himself get the fuck rid of it
+    public Weapons weapon = Weapons.Staff;
     // set to the following type with bullets
     const int nonBulletWeps = (int)Weapons.Pistol;
     const float bulletXOffset = 1f;
@@ -51,9 +52,6 @@ public class WeaponController : MonoBehaviour {
 
     void useWeapon()
     {
-        // FIXME: toto dopice odjebat
-        weapon = Weapons.Pistol;
-
         if (weapon < Weapons.Staff)
         {
             print("Fuck you, implement it yourself, I am only doing bullets now.");
@@ -68,15 +66,24 @@ public class WeaponController : MonoBehaviour {
         bulletSpawnPos.x += direction * bulletXOffset;
 
         // position has to be offseted you dumb idiot
-        GameObject bullet = Instantiate(bullets[(int)weapon - nonBulletWeps], bulletSpawnPos, Quaternion.identity);
-        float bulletSpeed = bullet.GetComponent<BulletController>().speed;
-        Vector2 forceVector = new Vector2(bulletSpeed * direction, 0);
+        int numBullets = 1;
+        if (weapon == Weapons.Shotgun) numBullets = 2;
 
-        Rigidbody2D brb = bullet.GetComponent<Rigidbody2D>();
-        brb.AddForce(
-            forceVector + 
-            new Vector2(Random.Range(-bulletSpreadRange, bulletSpreadRange),
-                        Random.Range(-bulletSpreadRange, bulletSpreadRange))
-        );
+        for(int i = 0; i < numBullets; i++) {
+            bulletSpawnPos.y += 0.2f * i;
+            GameObject bullet = Instantiate(bullets[(int)weapon - nonBulletWeps], bulletSpawnPos, Quaternion.identity);
+            float bulletSpeed = bullet.GetComponent<BulletController>().speed;
+            Vector2 forceVector = new Vector2(bulletSpeed * direction, 0);
+            Vector2 randomizer = new Vector2(
+                Random.Range(-bulletSpreadRange, bulletSpreadRange),
+                Random.Range(-bulletSpreadRange, bulletSpreadRange)
+            );
+
+            Rigidbody2D brb = bullet.GetComponent<Rigidbody2D>();
+            brb.AddForce(
+                forceVector + randomizer 
+
+            );
+        }
     }
 }
