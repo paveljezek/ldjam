@@ -327,11 +327,6 @@ Prefab:
     m_Modifications:
     - target: {fileID: 224123184116636238, guid: 960a7531075c5754c8a640a3f94ef1ff,
         type: 2}
-      propertyPath: m_RootOrder
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 224123184116636238, guid: 960a7531075c5754c8a640a3f94ef1ff,
-        type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -420,10 +415,7 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 114500157255740730, guid: 960a7531075c5754c8a640a3f94ef1ff, type: 2}
-    - {fileID: 114119968800885822, guid: 960a7531075c5754c8a640a3f94ef1ff, type: 2}
-    - {fileID: 114926973979154818, guid: 960a7531075c5754c8a640a3f94ef1ff, type: 2}
+    m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 960a7531075c5754c8a640a3f94ef1ff, type: 2}
   m_IsPrefabParent: 0
 --- !u!114 &644009870 stripped

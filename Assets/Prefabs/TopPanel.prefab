@@ -275,10 +275,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99b0faed1460d48b2b164e766928dd61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  staff: {fileID: 0}
-  sword: {fileID: 21300000, guid: c41e5f4a773ef4048ad39dcc067b6154, type: 3}
-  pistol: {fileID: 21300002, guid: c41e5f4a773ef4048ad39dcc067b6154, type: 3}
-  shotgun: {fileID: 21300004, guid: c41e5f4a773ef4048ad39dcc067b6154, type: 3}
+  staff: {fileID: 21300000, guid: 5a1dde26d3ace4ee29f8096ed5c4bae7, type: 3}
+  sword: {fileID: 21300000, guid: 50411219d98754672bebff0d12267c16, type: 3}
+  pistol: {fileID: 21300000, guid: 3cf72f3cdcb044c1692e5706558e3b4b, type: 3}
+  shotgun: {fileID: 21300000, guid: c27d941fe77d54ab7af15f0fb416c899, type: 3}
 --- !u!114 &114331065296882152
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -553,7 +553,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.47794116, g: 0.27059904, b: 0.27059904, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:

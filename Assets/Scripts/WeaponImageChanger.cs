@@ -24,6 +24,7 @@ public class WeaponImageChanger : MonoBehaviour {
 	}
 	
 	public void updateImage(string weapon) {
+		gameObject.GetComponentInChildren<Text>().text = weapon;
 		gameObject.GetComponent<Image>().sprite = weapons[weapon];
 	}
 	

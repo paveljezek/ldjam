@@ -31,9 +31,9 @@ public class WeaponController : MonoBehaviour {
     Dictionary<Weapons, int> weaponStats = new Dictionary<Weapons, int>()
     {
         { Weapons.Staff, 1 },
-        { Weapons.Sword, 0 },
-        { Weapons.Pistol, 0 },
-        { Weapons.Shotgun, 0 },
+        { Weapons.Sword, 1 },
+        { Weapons.Pistol, 1 },
+        { Weapons.Shotgun, 1 },
         { Weapons.BFG, 0 }
     };
 
