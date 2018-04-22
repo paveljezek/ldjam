@@ -207,7 +207,7 @@ Transform:
   m_Children:
   - {fileID: 119729459}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &70170595
 Rigidbody2D:
@@ -260,6 +260,7 @@ MonoBehaviour:
   bulletSpeed: 0
   bullets:
   - {fileID: 1361537683264044, guid: 30a83513596e8d040b9b25d06abbc528, type: 2}
+  weapon: 0
 --- !u!114 &70170598
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -483,7 +484,7 @@ Transform:
   - {fileID: 902695596}
   - {fileID: 1863950996}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &545262924
 GameObject:
@@ -528,7 +529,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &642339975
 Prefab:
@@ -540,7 +541,7 @@ Prefab:
     - target: {fileID: 224123184116636238, guid: 960a7531075c5754c8a640a3f94ef1ff,
         type: 2}
       propertyPath: m_RootOrder
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 224123184116636238, guid: 960a7531075c5754c8a640a3f94ef1ff,
         type: 2}
@@ -580,7 +581,7 @@ Prefab:
     - target: {fileID: 224123184116636238, guid: 960a7531075c5754c8a640a3f94ef1ff,
         type: 2}
       propertyPath: m_RootOrder
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 224123184116636238, guid: 960a7531075c5754c8a640a3f94ef1ff,
         type: 2}
@@ -788,7 +789,7 @@ Transform:
   - {fileID: 1258002567}
   - {fileID: 1163689534}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &842112863 stripped
 MonoBehaviour:
@@ -1108,7 +1109,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1258002566
 GameObject:
@@ -3498,7 +3499,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HousePrefab: {fileID: 1479589585716586, guid: 9d013fc7a073144459bf42b3940baf21,
     type: 2}
-  HouseSystem: {fileID: 2116258107}
+  HouseSystem: {fileID: 0}
   xOffset: 0.5
   yOffest: -1
 --- !u!1 &1459600421
@@ -3610,7 +3611,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!223 &1576224810 stripped
 Canvas:
@@ -3922,7 +3923,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1967642308
 GameObject:
@@ -3971,7 +3972,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2116258106
 Prefab:
@@ -4020,9 +4021,3 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1c0c8992478f3e24792a3c58a13284bc, type: 2}
   m_IsPrefabParent: 0
---- !u!114 &2116258107 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114396018859722892, guid: 1c0c8992478f3e24792a3c58a13284bc,
-    type: 2}
-  m_PrefabInternal: {fileID: 2116258106}
-  m_Script: {fileID: 11500000, guid: c611970df73e3d54d97a7c07b07c70a5, type: 3}
