@@ -56,7 +56,15 @@ public class HouseSystemUI : MonoBehaviour {
     public void ShowPrice(int cost)
     {
         price = cost;
-        ShowPriceApply();     
+        if (!goldc.canBuy(price))
+        {
+            ShowPriceApply();
+            ShowTooExpensive();
+        }
+        else
+        {
+            ShowPriceApply();
+        }
     }
 
     void ShowPriceApply()
@@ -67,7 +75,6 @@ public class HouseSystemUI : MonoBehaviour {
     public void ShowTooExpensive()
     {
         priceText.TooExpensive();
-        Invoke("ShowPriceApply", 1.0f);
     }
 
     void BuildHouse(WeaponController.Weapons w)
