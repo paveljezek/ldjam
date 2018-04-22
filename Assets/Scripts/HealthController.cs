@@ -11,9 +11,13 @@ public class HealthController : MonoBehaviour {
     public float maxHealth = 100;
     private float health;
 
+	private GameObject player;
+
     void Start () {
         health = maxHealth;
         updateHealth();
+
+		player = GameObject.Find("Player");
 	}
 	
 	public void healthAdd(float amount) {
@@ -33,6 +37,7 @@ public class HealthController : MonoBehaviour {
             }
             else {
                 print("destroy " + gameObject.name);
+				player.GetComponent<GoldController>().enemyKilled();
                 Destroy(gameObject);
             }
         }

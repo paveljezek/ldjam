@@ -19,6 +19,10 @@ public class GoldController : MonoBehaviour {
     {
         return true;//always enough gold :)
     }
+
+	public void enemyKilled() {
+		goldAdd(5);
+	}
 	
 	void goldAdd(int amount) {
 		gold += amount;
