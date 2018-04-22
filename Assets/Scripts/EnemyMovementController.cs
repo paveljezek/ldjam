@@ -39,14 +39,11 @@ public class EnemyMovementController : PhysicsObject
             prb.AddForceAtPosition(moveAside, prb.transform.position, ForceMode2D.Impulse);
 
             direction *= -1;
-
-            print("flip");
         }
      }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        print("touch");
         if (other.name == "LeftBouncer")
         {
             direction = 1;
