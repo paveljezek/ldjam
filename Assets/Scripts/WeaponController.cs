@@ -85,6 +85,21 @@ public class WeaponController : MonoBehaviour {
             weapon = wep;
             updatePanel();
 
+            switch (wep)
+            {
+                case Weapons.Staff:
+                    animator.SetTrigger("use" + wep.ToString());
+                    break;
+                case Weapons.Sword:
+                    animator.SetTrigger("use" + wep.ToString());
+                    break;
+                case Weapons.Pistol:
+                    animator.SetTrigger("use" + wep.ToString());
+                    break;
+                case Weapons.Shotgun:
+                    animator.SetTrigger("use" + wep.ToString());
+                    break;
+            }
             //playerPlatformer.setAccordingWeaponAnimation(weapon);
         }
         else
@@ -100,7 +115,7 @@ public class WeaponController : MonoBehaviour {
     void useWeapon()
     {
         //playerPlatformer.setAnimationState(PlayerPlatformerController.MovementState.Attacking);
-        animator.SetTrigger("Meele");
+        animator.SetTrigger("Attack");
 
         if (weapon <= Weapons.Sword)
         {
