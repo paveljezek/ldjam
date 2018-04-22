@@ -1,21 +1,22 @@
 fileFormatVersion: 2
-guid: 91e200b3e19973d4b95fd192b6bf83df
-timeCreated: 1524386619
+guid: b1ac061d9e07bd64fa950c24997f0cd0
+timeCreated: 1524391355
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: pope_idle_0
-    21300002: pope_idle_1
-    21300004: pope_idle_2
-    21300006: pope_idle_3
-    21300008: pope_idle_4
-    21300010: pope_idle_5
-    21300012: pope_idle_6
-    21300014: pope_idle_7
-    21300016: pope_idle_8
-    21300018: pope_idle_9
-    21300020: pope_idle_10
-    21300022: pope_idle_11
+    21300000: pope_walking_pistol_0
+    21300002: pope_walking_pistol_1
+    21300004: pope_walking_pistol_2
+    21300006: pope_walking_pistol_3
+    21300008: pope_walking_pistol_4
+    21300010: pope_walking_pistol_5
+    21300012: pope_walking_pistol_6
+    21300014: pope_walking_pistol_7
+    21300016: pope_walking_pistol_8
+    21300018: pope_walking_pistol_9
+    21300020: pope_walking_pistol_10
+    21300022: pope_walking_pistol_11
+    21300024: pope_walking_pistol_12
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -93,13 +94,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: pope_idle_0
+      name: pope_walking_pistol_0
       rect:
         serializedVersion: 2
-        x: 12
-        y: 392
-        width: 82
-        height: 114
+        x: 0
+        y: 384
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -107,13 +108,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: pope_idle_1
+      name: pope_walking_pistol_1
       rect:
         serializedVersion: 2
-        x: 140
-        y: 392
-        width: 84
-        height: 114
+        x: 128
+        y: 384
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -121,13 +122,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: pope_idle_2
+      name: pope_walking_pistol_2
       rect:
         serializedVersion: 2
-        x: 268
-        y: 392
-        width: 84
-        height: 116
+        x: 256
+        y: 384
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -135,13 +136,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: pope_idle_3
+      name: pope_walking_pistol_3
       rect:
         serializedVersion: 2
-        x: 396
-        y: 392
-        width: 84
-        height: 116
+        x: 384
+        y: 384
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -149,13 +150,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: pope_idle_4
+      name: pope_walking_pistol_4
       rect:
         serializedVersion: 2
-        x: 12
-        y: 264
-        width: 84
-        height: 113
+        x: 0
+        y: 256
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -163,13 +164,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: pope_idle_5
+      name: pope_walking_pistol_5
       rect:
         serializedVersion: 2
-        x: 140
-        y: 264
-        width: 82
-        height: 113
+        x: 128
+        y: 256
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -177,13 +178,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: pope_idle_6
+      name: pope_walking_pistol_6
       rect:
         serializedVersion: 2
-        x: 268
-        y: 264
-        width: 82
-        height: 113
+        x: 256
+        y: 256
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -191,13 +192,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: pope_idle_7
+      name: pope_walking_pistol_7
       rect:
         serializedVersion: 2
-        x: 396
-        y: 264
-        width: 82
-        height: 114
+        x: 384
+        y: 256
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -205,13 +206,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: pope_idle_8
+      name: pope_walking_pistol_8
       rect:
         serializedVersion: 2
-        x: 12
-        y: 136
-        width: 82
-        height: 114
+        x: 0
+        y: 128
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -219,13 +220,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: pope_idle_9
+      name: pope_walking_pistol_9
       rect:
         serializedVersion: 2
-        x: 140
-        y: 136
-        width: 82
-        height: 114
+        x: 128
+        y: 128
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -233,13 +234,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: pope_idle_10
+      name: pope_walking_pistol_10
       rect:
         serializedVersion: 2
-        x: 268
-        y: 136
-        width: 82
-        height: 114
+        x: 256
+        y: 128
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -247,13 +248,27 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: pope_idle_11
+      name: pope_walking_pistol_11
       rect:
         serializedVersion: 2
-        x: 396
-        y: 136
-        width: 84
-        height: 116
+        x: 384
+        y: 128
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: pope_walking_pistol_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
