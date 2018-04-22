@@ -96,9 +96,16 @@ public class WeaponController : MonoBehaviour {
     void useWeapon()
     {
         playerPlatformer.setAnimationState(PlayerPlatformerController.MovementState.Attacking);
-        if (weapon < Weapons.Staff)
+        if (weapon <= Weapons.Sword)
         {
-            print("Fuck you, implement it yourself, I am only doing bullets now.");
+            MeleeHandler mhandler = gameObject.GetComponentInChildren<MeleeHandler>();
+            if(mhandler.hit()) {
+                Collider2D enemy = mhandler.enemy();
+                if(enemy.tag == "Enemy") {
+                    enemy.gameObject.GetComponent<HealthController>().healthSub(25);
+                }
+            }
+
             return;
         }
 

@@ -570,12 +570,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &842112863 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114407448170928108, guid: 960a7531075c5754c8a640a3f94ef1ff,
-    type: 2}
-  m_PrefabInternal: {fileID: 642339975}
-  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
 --- !u!1001 &860588055
 Prefab:
   m_ObjectHideFlags: 0
@@ -935,16 +929,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 114706178592044290, guid: 66e74f11a0faf8e4daba4ad197a7ebd5,
+    - target: {fileID: 114485792665817516, guid: 66e74f11a0faf8e4daba4ad197a7ebd5,
         type: 2}
-      propertyPath: weaponText
+      propertyPath: goldText
       value: 
-      objectReference: {fileID: 1845447522}
-    - target: {fileID: 114706178592044290, guid: 66e74f11a0faf8e4daba4ad197a7ebd5,
-        type: 2}
-      propertyPath: weaponImage
-      value: 
-      objectReference: {fileID: 842112863}
+      objectReference: {fileID: 644009870}
     - target: {fileID: 114668578645486092, guid: 66e74f11a0faf8e4daba4ad197a7ebd5,
         type: 2}
       propertyPath: healthBar
@@ -955,11 +944,16 @@ Prefab:
       propertyPath: endCanvas
       value: 
       objectReference: {fileID: 1576224810}
-    - target: {fileID: 114485792665817516, guid: 66e74f11a0faf8e4daba4ad197a7ebd5,
+    - target: {fileID: 61282812651072656, guid: 66e74f11a0faf8e4daba4ad197a7ebd5,
         type: 2}
-      propertyPath: goldText
-      value: 
-      objectReference: {fileID: 644009870}
+      propertyPath: m_Offset.y
+      value: -0.14903736
+      objectReference: {fileID: 0}
+    - target: {fileID: 61282812651072656, guid: 66e74f11a0faf8e4daba4ad197a7ebd5,
+        type: 2}
+      propertyPath: m_Size.y
+      value: 0.860899
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 66e74f11a0faf8e4daba4ad197a7ebd5, type: 2}
   m_IsPrefabParent: 0
@@ -1086,11 +1080,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 224229479725119062, guid: 932248e754970c546852469344e44dbb,
-        type: 2}
-      propertyPath: m_RootOrder
-      value: 12
-      objectReference: {fileID: 0}
     - target: {fileID: 224229479725119062, guid: 932248e754970c546852469344e44dbb,
         type: 2}
       propertyPath: m_LocalPosition.x
@@ -1252,12 +1241,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1763266604}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &1845447522 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114790035749845310, guid: 960a7531075c5754c8a640a3f94ef1ff,
-    type: 2}
-  m_PrefabInternal: {fileID: 642339975}
-  m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
 --- !u!1 &1863950995
 GameObject:
   m_ObjectHideFlags: 0
