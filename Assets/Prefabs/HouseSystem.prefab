@@ -341,7 +341,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Gun
+  m_Text: Pistol
 --- !u!114 &114197604541135560
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -458,6 +458,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tch: {fileID: 0}
   ui: {fileID: 114975950017821868}
+  buildings_weaponsSword: {fileID: 21300000, guid: c41e5f4a773ef4048ad39dcc067b6154,
+    type: 3}
+  buildings_weaponsPistol: {fileID: 21300002, guid: c41e5f4a773ef4048ad39dcc067b6154,
+    type: 3}
+  buildings_weaponsShotgun: {fileID: 21300004, guid: c41e5f4a773ef4048ad39dcc067b6154,
+    type: 3}
 --- !u!114 &114418050876075238
 MonoBehaviour:
   m_ObjectHideFlags: 1

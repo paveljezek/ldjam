@@ -17,7 +17,7 @@ public class House : MonoBehaviour {
     public WeaponController.Weapons weapon;
     public SpriteRenderer weaponSprite;
 
-    public void BuildHouse()
+    public void BuildHouse(WeaponController.Weapons w)
     {
         if(!isHouseBuild) {
             GameObject panel = GameObject.Find("TopPanel");
@@ -27,7 +27,7 @@ public class House : MonoBehaviour {
         sr.enabled = true;
         weaponSprite.enabled = true;
 
-        SetWeapon(WeaponController.Weapons.Pistol);
+        SetWeapon(w);
         
     }
 

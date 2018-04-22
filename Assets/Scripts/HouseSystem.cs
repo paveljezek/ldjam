@@ -19,9 +19,9 @@ public class HouseSystem : MonoBehaviour {
         ui.injectHouseSystem(this);
     }
 
-    public void BuildCurrentHouse()
+    public void BuildCurrentHouse(WeaponController.Weapons w)
     {
-        currentHouse.BuildHouse();
+        currentHouse.BuildHouse(w);
     }
 
     public void HouseSpotEnabled(House house)

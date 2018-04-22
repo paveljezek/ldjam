@@ -31,26 +31,42 @@ public class HouseSystemUI : MonoBehaviour {
             if (Input.GetKeyDown(KeyCode.X))
             {
                 print("building X house");
-                BuildX();
+                BuildSword();
             }
             else if (Input.GetKeyDown(KeyCode.C))
             {
                 print("building C house");
-                BuildX();
+                BuildPistol();
             }
             else if (Input.GetKeyDown(KeyCode.V))
             {
                 print("building V house");
-                BuildX();
+                BuildShotgun();
             }
         }
     }
 
-    void BuildX()
+    void BuildSword()
     {
         if (goldc.RequestPurchase())
         {
-            hs.BuildCurrentHouse();
+            hs.BuildCurrentHouse(WeaponController.Weapons.Sword);
+        }
+    }
+
+    void BuildPistol()
+    {
+        if (goldc.RequestPurchase())
+        {
+            hs.BuildCurrentHouse(WeaponController.Weapons.Pistol);
+        }
+    }
+
+    void BuildShotgun()
+    {
+        if (goldc.RequestPurchase())
+        {
+            hs.BuildCurrentHouse(WeaponController.Weapons.Shotgun);
         }
     }
 
