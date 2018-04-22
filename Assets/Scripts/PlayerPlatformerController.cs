@@ -16,6 +16,8 @@ public class PlayerPlatformerController : PhysicsObject
     private WeaponController weaponController;
     private Animator animator;
 
+    public BoxCollider2D meeleTrigger;
+
     public enum MovementState
     {
         Idle,
@@ -95,6 +97,8 @@ public class PlayerPlatformerController : PhysicsObject
         {
             velocity.y = jumpTakeOffSpeed;
         }
+
+        meeleTrigger.enabled = grounded;
 
         if(spriteRenderer != null)
         {
