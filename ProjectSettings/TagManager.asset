@@ -15,8 +15,8 @@ TagManager:
   - 
   - 
   - EnemyLayer
-  - 
-  - 
+  - BulletLayer
+  - Building
   - 
   - 
   - 
