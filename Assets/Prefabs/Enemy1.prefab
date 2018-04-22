@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 114229956477002740}
   - component: {fileID: 114253571642284076}
   - component: {fileID: 70592970766352328}
+  - component: {fileID: 95250291306385684}
   m_Layer: 8
   m_Name: Enemy1
   m_TagString: Enemy
@@ -79,6 +80,23 @@ CapsuleCollider2D:
   m_Offset: {x: -0.14631732, y: -0.43822223}
   m_Size: {x: 1.6854103, y: 0.9921256}
   m_Direction: 1
+--- !u!95 &95250291306385684
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1315385234953692}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5b25d48a46b935d4f95b19d668c9fad1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114229956477002740
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -142,7 +160,7 @@ SpriteRenderer:
   m_SortingLayerID: -1777144987
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: a2cd0cd6621226f449e5c7c5b5d30dfa, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d902c8060b7437442b71e66856b68644, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
