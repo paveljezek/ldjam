@@ -865,6 +865,11 @@ Prefab:
       propertyPath: goldText
       value: 
       objectReference: {fileID: 644009870}
+    - target: {fileID: 95940278010336302, guid: 66e74f11a0faf8e4daba4ad197a7ebd5,
+        type: 2}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 622f868b42235c045978e0f17921212b, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 66e74f11a0faf8e4daba4ad197a7ebd5, type: 2}
   m_IsPrefabParent: 0

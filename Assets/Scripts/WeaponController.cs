@@ -81,7 +81,7 @@ public class WeaponController : MonoBehaviour {
             weapon = wep;
             updatePanel();
 
-            playerPlatformer.setAccordingWeaponAnimation(weapon);
+            //playerPlatformer.setAccordingWeaponAnimation(weapon);
         }
         else
         {
@@ -95,7 +95,7 @@ public class WeaponController : MonoBehaviour {
 
     void useWeapon()
     {
-        playerPlatformer.setAnimationState(PlayerPlatformerController.MovementState.Attacking);
+        //playerPlatformer.setAnimationState(PlayerPlatformerController.MovementState.Attacking);
         if (weapon <= Weapons.Sword)
         {
             MeleeHandler mhandler = gameObject.GetComponentInChildren<MeleeHandler>();
