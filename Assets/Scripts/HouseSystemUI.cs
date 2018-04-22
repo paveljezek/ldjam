@@ -13,8 +13,11 @@ public class HouseSystemUI : MonoBehaviour {
 
     public PriceText priceText;
 
-	// Use this for initialization
-	void Start () {
+    int price; //ugly cost caching
+
+
+    // Use this for initialization
+    void Start() {
         AttachToPlayer();
 
         canvas = GetComponentInChildren<CanvasRenderer>();
@@ -27,55 +30,56 @@ public class HouseSystemUI : MonoBehaviour {
     {
         hs = houseSystem;
     }
-	
-	// Update is called once per frame
-	void Update () {
+
+    // Update is called once per frame
+    void Update() {
         if (isInputEnabled)
         {
             if (Input.GetKeyDown(KeyCode.X))
             {
                 //print("building X house");
-                BuildSword();
+                BuildHouse(WeaponController.Weapons.Sword);
             }
             else if (Input.GetKeyDown(KeyCode.C))
             {
                 //print("building C house");
-                BuildPistol();
+                BuildHouse(WeaponController.Weapons.Pistol);
             }
             else if (Input.GetKeyDown(KeyCode.V))
             {
                 //print("building V house");
-                BuildShotgun();
+                BuildHouse(WeaponController.Weapons.Shotgun);
             }
         }
     }
 
     public void ShowPrice(int cost)
     {
-        priceText.SetPriceText(cost);
+        price = cost;
+        ShowPriceApply();     
     }
 
-    void BuildSword()
+    void ShowPriceApply()
     {
-        if (goldc.RequestPurchase())
+        priceText.SetPriceText(price);
+    }
+
+    public void ShowTooExpensive()
+    {
+        priceText.TooExpensive();
+        Invoke("ShowPriceApply", 1.0f);
+    }
+
+    void BuildHouse(WeaponController.Weapons w)
+    {
+        if (goldc.canBuy(price))
         {
-            hs.BuildCurrentHouse(WeaponController.Weapons.Sword);
+            goldc.spendGold(price);
+            hs.BuildCurrentHouse(w);
         }
-    }
-
-    void BuildPistol()
-    {
-        if (goldc.RequestPurchase())
+        else
         {
-            hs.BuildCurrentHouse(WeaponController.Weapons.Pistol);
-        }
-    }
-
-    void BuildShotgun()
-    {
-        if (goldc.RequestPurchase())
-        {
-            hs.BuildCurrentHouse(WeaponController.Weapons.Shotgun);
+            ShowTooExpensive();
         }
     }
 

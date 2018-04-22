@@ -15,7 +15,7 @@ public class GoldController : MonoBehaviour {
 		updateGold();
 	}
 
-    public bool RequestPurchase()
+    public bool canBuyAlwaysCheat()
     {
         return true;//always enough gold :)
     }
