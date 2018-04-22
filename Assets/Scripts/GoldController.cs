@@ -21,7 +21,7 @@ public class GoldController : MonoBehaviour {
     }
 
 	public void enemyKill() {
-		goldAdd(5);
+		goldAdd(12);
 	}
 
 	public bool canBuy(int amount) {
