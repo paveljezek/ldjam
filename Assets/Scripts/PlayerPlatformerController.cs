@@ -67,7 +67,6 @@ public class PlayerPlatformerController : PhysicsObject
 
         moveState = ms;
 
-        print("setting movement to " + ms.ToString());
         switch(ms)
         {
             case MovementState.Idle:
