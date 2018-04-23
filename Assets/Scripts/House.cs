@@ -68,7 +68,7 @@ public class House : MonoBehaviour {
         int maxLev = hs.findHighestHouseLevelByWepType(weapon);
         if (maxLev == -1)
         {
-            wc.setWeaponLevel(oldType, 0);
+            wc.setWeaponLevel(oldType, oldType == WeaponController.Weapons.Staff ? 1 : 0); //staff cannot have level lower than 1
         }
         else
         {

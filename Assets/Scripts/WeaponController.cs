@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -21,7 +22,7 @@ public class WeaponController : MonoBehaviour {
     // the idiot who left "public" at "weapon" here for debugging should
     //  himself get the fuck rid of it
     public Weapons weapon = Weapons.Staff;
-    public const KeyCode ATTACK_BUTTON = KeyCode.RightControl;
+    public const KeyCode ATTACK_BUTTON = KeyCode.E;
 
     // set to the following type with bullets
     const int nonBulletWeps = (int)Weapons.Pistol;
@@ -73,6 +74,10 @@ public class WeaponController : MonoBehaviour {
         {
             selectWeapon(Weapons.BFG);
         }
+        else if (Input.GetKeyDown(KeyCode.Q))
+        {
+            nextWeapon();
+        }
         // don't shoot if picking a weapon
         else if (Input.GetKeyDown(ATTACK_BUTTON))
         {
@@ -80,7 +85,21 @@ public class WeaponController : MonoBehaviour {
         }
     }
 
-	void selectWeapon(Weapons wep) {
+    private void nextWeapon()
+    {
+        int weaponNumber = (int) getCurrentWeapon();
+        var weaponsCount = Enum.GetNames(typeof(Weapons)).Length;
+        do
+        {
+            weaponNumber = (weaponNumber + 1) % weaponsCount;
+            print("Trying: " + weaponNumber + "stat" + weaponStats[(Weapons)weaponNumber]);
+        } while (weaponStats[(Weapons)weaponNumber] == 0);
+        
+        print("Selecting: " + weaponNumber);
+        selectWeapon((Weapons)weaponNumber);
+    }
+
+    void selectWeapon(Weapons wep) {
         if (wep != weapon && weaponStats[wep] > 0) {
             weapon = wep;
             updatePanel();
@@ -148,8 +167,8 @@ public class WeaponController : MonoBehaviour {
             float bulletSpeed = bullet.GetComponent<BulletController>().speed;
             Vector2 forceVector = new Vector2(bulletSpeed * direction, 0);
             Vector2 randomizer = new Vector2(
-                Random.Range(-bulletSpreadRange, bulletSpreadRange),
-                Random.Range(-bulletSpreadRange, bulletSpreadRange)
+                UnityEngine.Random.Range(-bulletSpreadRange, bulletSpreadRange),
+                UnityEngine.Random.Range(-bulletSpreadRange, bulletSpreadRange)
             );
 
             Rigidbody2D brb = bullet.GetComponent<Rigidbody2D>();
@@ -167,6 +186,7 @@ public class WeaponController : MonoBehaviour {
             // TODO: equip highest usable weapon
             selectWeapon(Weapons.Staff);
         }
+        print("Setting weapon " + wt + " ---- level " + level);
         weaponStats[wt] = level;
     }
 
