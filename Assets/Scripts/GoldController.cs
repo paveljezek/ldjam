@@ -11,7 +11,7 @@ public class GoldController : MonoBehaviour {
 	private int gold;
 	// Use this for initialization
 	void Start () {
-		gold = 200;
+		gold = 300;
 		updateGold();
 	}
 

@@ -11,6 +11,7 @@ public class House : MonoBehaviour {
     public int HealthPoints;
     public int Cost;
     public int Level;
+    
 
     bool isHouseBuild;
 
@@ -25,6 +26,15 @@ public class House : MonoBehaviour {
         if(!isHouseBuild) {
             GameObject panel = GameObject.Find("TopPanel");
             panel.GetComponent<ScoreController>().buildingBuilt();
+
+            GameObject.Find("winManager").GetComponent<win_check>().winCount++;
+            print(GameObject.Find("winManager").GetComponent<win_check>().winCount);
+
+            if (GameObject.Find("winManager").GetComponent<win_check>().winCount == 5)
+            {
+                GameObject.Find("winManager").GetComponent<win_check>().GameWin();
+            }
+
         }
         isHouseBuild = true;
         sr.enabled = true;
@@ -36,6 +46,8 @@ public class House : MonoBehaviour {
             wc.setWeaponLevel(w, Level);
         }
 
+
+        
         SetWeapon(w);
     }
 
@@ -63,6 +75,9 @@ public class House : MonoBehaviour {
         sr.enabled = false;
         weaponSprite.enabled = false;
 
+        GameObject.Find("winManager").GetComponent<win_check>().winCount--;
+        print(GameObject.Find("winManager").GetComponent<win_check>().winCount);
+
         WeaponController.Weapons oldType = weapon;
         weapon = WeaponController.Weapons.Staff;
         // TODO: find highest weapon tier house and asssign it to WeaponController
@@ -75,6 +90,9 @@ public class House : MonoBehaviour {
         {
             wc.setWeaponLevel(oldType, maxLev);
         }
+
+        
+
     }
 
 	// Use this for initialization
