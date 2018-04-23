@@ -20,8 +20,11 @@ public class WeaponImageChanger : MonoBehaviour {
 		weapons["Sword"] = sword;
 		weapons["Pistol"] = pistol;
 		weapons["Shotgun"] = shotgun;
-		
-	}
+
+        gameObject.GetComponentInChildren<Text>().text = "Staff";
+        gameObject.GetComponent<Image>().sprite = weapons["Staff"];
+
+    }
 	
 	public void updateImage(string weapon) {
 		gameObject.GetComponentInChildren<Text>().text = weapon;
