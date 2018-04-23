@@ -14,6 +14,7 @@ public class House : MonoBehaviour {
 
     bool isHouseBuild;
 
+    // should be instead set to weapon type None or something, yet there is no time!
     public WeaponController.Weapons weapon;
     public SpriteRenderer weaponSprite;
 
@@ -65,7 +66,7 @@ public class House : MonoBehaviour {
         WeaponController.Weapons oldType = weapon;
         weapon = WeaponController.Weapons.Staff;
         // TODO: find highest weapon tier house and asssign it to WeaponController
-        int maxLev = hs.findHighestHouseLevelByWepType(weapon);
+        int maxLev = hs.findHighestHouseLevelByWepType(oldType);
         if (maxLev == -1)
         {
             wc.setWeaponLevel(oldType, oldType == WeaponController.Weapons.Staff ? 1 : 0); //staff cannot have level lower than 1
@@ -78,6 +79,7 @@ public class House : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        weapon = WeaponController.Weapons.BFG;
         hs = GameObject.Find("HouseSystem").GetComponent<HouseSystem>();
         sr = GetComponentInChildren<SpriteRenderer>();
         wc = GameObject.Find("Player").GetComponent<WeaponController>();
