@@ -1,3 +1,5 @@
+This repo was archived and moved to [GitLab](https://gitlab.com/srpwnd/pope-builder).
+
 # Pope Builder
 Our try at Ludum Dare #41 jam with theme of "Combine 2 Incompatible Genres". We decided to merge strategy with platformer.
 
